@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Patient-->
+        <scene sceneID="qfH-WJ-TBU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Patient" id="Zy4-9B-PKz" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Y03-Oa-GcD"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zxr-OM-bf0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3" y="560"/>
+        </scene>
+        <!--Onboarding Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="OnboardingController" customModule="Health_booking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j09-T6-78P">
+                                <rect key="frame" x="16" y="76" width="382" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="1Of-ad-Hbk">
+                                <rect key="frame" x="45.5" y="365" width="323" height="166.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1Rb-vN-3TE">
+                                        <rect key="frame" x="0.0" y="0.0" width="138" height="166.5"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZO-JF-ccL">
+                                                <rect key="frame" x="0.0" y="0.0" width="138" height="138"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="138" id="tx4-p3-mUu"/>
+                                                    <constraint firstAttribute="width" constant="138" id="zrH-4r-kGl"/>
+                                                </constraints>
+                                                <state key="normal" image="img_person"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="69"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onUserSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XDy-1t-JwX"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patient" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdH-mp-zx2">
+                                                <rect key="frame" x="0.0" y="146" width="138" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="S8I-bJ-HRe">
+                                        <rect key="frame" x="185" y="0.0" width="138" height="166.5"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zek-zY-XAK">
+                                                <rect key="frame" x="0.0" y="0.0" width="138" height="138"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="138" id="3R9-o0-gM8"/>
+                                                    <constraint firstAttribute="height" constant="138" id="Hiz-gT-GpG"/>
+                                                </constraints>
+                                                <state key="normal" image="img_doctor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="69"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="onUserSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kf5-3p-at6"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doctor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlD-RB-oFv">
+                                                <rect key="frame" x="0.0" y="146" width="138" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose in what whay you would like to access the application" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdt-60-k4G">
+                                <rect key="frame" x="16" y="124" width="382" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xd9-UN-Ka5">
+                                <rect key="frame" x="100" y="770" width="214" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="xQf-Xq-Nrb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onContinue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UL5-Qs-WXj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Sdt-60-k4G" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="2DO-Hf-rNm"/>
+                            <constraint firstItem="1Of-ad-Hbk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3cU-Sx-SDr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xd9-UN-Ka5" secondAttribute="trailing" constant="100" id="4hq-iI-m4B"/>
+                            <constraint firstItem="Xd9-UN-Ka5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="FFS-eB-SvW"/>
+                            <constraint firstItem="j09-T6-78P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="GbO-7b-fSL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sdt-60-k4G" secondAttribute="trailing" constant="16" id="N82-1S-zgp"/>
+                            <constraint firstItem="Sdt-60-k4G" firstAttribute="top" secondItem="j09-T6-78P" secondAttribute="bottom" id="UkN-bw-Mw3"/>
+                            <constraint firstItem="1Of-ad-Hbk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZF7-5J-c2N"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Xd9-UN-Ka5" secondAttribute="bottom" constant="32" id="baT-Cn-2J7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j09-T6-78P" secondAttribute="trailing" constant="16" id="rRN-At-Ltv"/>
+                            <constraint firstItem="j09-T6-78P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="tiq-e1-eIQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outletCollection property="buttons" destination="eZO-JF-ccL" collectionClass="NSMutableArray" id="Lm5-Oj-Q1U"/>
+                        <outletCollection property="buttons" destination="Zek-zY-XAK" collectionClass="NSMutableArray" id="8X4-sW-iEK"/>
+                        <segue destination="Zy4-9B-PKz" kind="show" identifier="PatientStoryboardSegue" id="DHF-z7-sEg"/>
+                        <segue destination="zBH-6E-Zi7" kind="show" identifier="DoctorStoryboardSegue" id="pNp-TN-PKs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="221.73913043478262" y="137.94642857142856"/>
+        </scene>
+        <!--Doctor-->
+        <scene sceneID="039-nj-yAm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Doctor" id="zBH-6E-Zi7" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="cd6-np-qJB"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uiM-c7-Tnf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="449" y="560"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="img_doctor" width="80" height="80"/>
+        <image name="img_person" width="80" height="80"/>
+    </resources>
+</document>
