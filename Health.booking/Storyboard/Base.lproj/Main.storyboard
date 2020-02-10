@@ -8,16 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Patient-->
-        <scene sceneID="qfH-WJ-TBU">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Patient" id="Zy4-9B-PKz" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Y03-Oa-GcD"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zxr-OM-bf0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3" y="560"/>
-        </scene>
         <!--Onboarding Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -44,6 +34,7 @@
                                                     <constraint firstAttribute="height" constant="138" id="tx4-p3-mUu"/>
                                                     <constraint firstAttribute="width" constant="138" id="zrH-4r-kGl"/>
                                                 </constraints>
+                                                <inset key="imageEdgeInsets" minX="22" minY="16" maxX="22" maxY="12"/>
                                                 <state key="normal" image="img_person"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -71,6 +62,7 @@
                                                     <constraint firstAttribute="width" constant="138" id="3R9-o0-gM8"/>
                                                     <constraint firstAttribute="height" constant="138" id="Hiz-gT-GpG"/>
                                                 </constraints>
+                                                <inset key="imageEdgeInsets" minX="16" minY="16" maxX="16" maxY="16"/>
                                                 <state key="normal" image="img_doctor"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -92,7 +84,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose in what whay you would like to access the application" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdt-60-k4G">
-                                <rect key="frame" x="16" y="124" width="382" height="36"/>
+                                <rect key="frame" x="16" y="130" width="382" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -113,7 +105,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="onContinue:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UL5-Qs-WXj"/>
+                                    <segue destination="iKk-sb-AHg" kind="show" id="SIm-Xu-Ran"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -125,7 +117,7 @@
                             <constraint firstItem="Xd9-UN-Ka5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="FFS-eB-SvW"/>
                             <constraint firstItem="j09-T6-78P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="GbO-7b-fSL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sdt-60-k4G" secondAttribute="trailing" constant="16" id="N82-1S-zgp"/>
-                            <constraint firstItem="Sdt-60-k4G" firstAttribute="top" secondItem="j09-T6-78P" secondAttribute="bottom" id="UkN-bw-Mw3"/>
+                            <constraint firstItem="Sdt-60-k4G" firstAttribute="top" secondItem="j09-T6-78P" secondAttribute="bottom" constant="6" id="UkN-bw-Mw3"/>
                             <constraint firstItem="1Of-ad-Hbk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZF7-5J-c2N"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Xd9-UN-Ka5" secondAttribute="bottom" constant="32" id="baT-Cn-2J7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j09-T6-78P" secondAttribute="trailing" constant="16" id="rRN-At-Ltv"/>
@@ -136,27 +128,108 @@
                     <connections>
                         <outletCollection property="buttons" destination="eZO-JF-ccL" collectionClass="NSMutableArray" id="Lm5-Oj-Q1U"/>
                         <outletCollection property="buttons" destination="Zek-zY-XAK" collectionClass="NSMutableArray" id="8X4-sW-iEK"/>
-                        <segue destination="Zy4-9B-PKz" kind="show" identifier="PatientStoryboardSegue" id="DHF-z7-sEg"/>
-                        <segue destination="zBH-6E-Zi7" kind="show" identifier="DoctorStoryboardSegue" id="pNp-TN-PKs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="221.73913043478262" y="137.94642857142856"/>
         </scene>
-        <!--Doctor-->
-        <scene sceneID="039-nj-yAm">
+        <!--Auth Controller-->
+        <scene sceneID="fMc-m5-sJ9">
             <objects>
-                <viewControllerPlaceholder storyboardName="Doctor" id="zBH-6E-Zi7" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="cd6-np-qJB"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uiM-c7-Tnf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="iKk-sb-AHg" customClass="AuthController" customModule="Health_booking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lev-PU-ie4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Authenticate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoP-XW-jKw">
+                                <rect key="frame" x="16" y="32" width="382" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="36m-y2-917">
+                                <rect key="frame" x="64" y="342.5" width="286" height="157"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ukq-qL-vfe">
+                                        <rect key="frame" x="0.0" y="0.0" width="286" height="62.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mv0-9k-oIy">
+                                                <rect key="frame" x="0.0" y="0.0" width="286" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="john_doe@mail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Dk-m3-t9L">
+                                                <rect key="frame" x="0.0" y="28.5" width="286" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RHf-hB-4XT">
+                                        <rect key="frame" x="0.0" y="94.5" width="286" height="62.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f40-SS-m4x">
+                                                <rect key="frame" x="0.0" y="0.0" width="286" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*********" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T6n-bJ-dEc">
+                                                <rect key="frame" x="0.0" y="28.5" width="286" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cG0-Hv-2ua">
+                                <rect key="frame" x="100" y="716" width="214" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Rbs-SG-Oxn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="36m-y2-917" firstAttribute="leading" secondItem="L3U-sh-urw" secondAttribute="leading" constant="64" id="7Z9-36-Kfr"/>
+                            <constraint firstItem="36m-y2-917" firstAttribute="centerY" secondItem="Lev-PU-ie4" secondAttribute="centerY" id="Cdo-kl-U02"/>
+                            <constraint firstItem="cG0-Hv-2ua" firstAttribute="leading" secondItem="L3U-sh-urw" secondAttribute="leading" constant="100" id="Qxo-Mm-fb0"/>
+                            <constraint firstItem="L3U-sh-urw" firstAttribute="trailing" secondItem="cG0-Hv-2ua" secondAttribute="trailing" constant="100" id="Sx0-AR-fXd"/>
+                            <constraint firstItem="L3U-sh-urw" firstAttribute="trailing" secondItem="36m-y2-917" secondAttribute="trailing" constant="64" id="XvG-Em-eil"/>
+                            <constraint firstItem="L3U-sh-urw" firstAttribute="bottom" secondItem="cG0-Hv-2ua" secondAttribute="bottom" constant="32" id="m42-ab-MrB"/>
+                            <constraint firstItem="36m-y2-917" firstAttribute="centerX" secondItem="Lev-PU-ie4" secondAttribute="centerX" id="mFE-2w-Hnk"/>
+                            <constraint firstItem="L3U-sh-urw" firstAttribute="trailing" secondItem="MoP-XW-jKw" secondAttribute="trailing" constant="16" id="mPC-B8-zlj"/>
+                            <constraint firstItem="MoP-XW-jKw" firstAttribute="top" secondItem="L3U-sh-urw" secondAttribute="top" constant="32" id="vr5-ch-zmQ"/>
+                            <constraint firstItem="MoP-XW-jKw" firstAttribute="leading" secondItem="L3U-sh-urw" secondAttribute="leading" constant="16" id="xUE-Nw-q4M"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="L3U-sh-urw"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iKD-kB-3Ag"/>
+                    <connections>
+                        <outlet property="identificationField" destination="3Dk-m3-t9L" id="eIR-8s-TXJ"/>
+                        <outlet property="identificationLabel" destination="Mv0-9k-oIy" id="XuX-83-5pc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wk2-8E-zWt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="449" y="560"/>
+            <point key="canvasLocation" x="1037.68115942029" y="137.94642857142856"/>
         </scene>
     </scenes>
     <resources>
-        <image name="img_doctor" width="80" height="80"/>
-        <image name="img_person" width="80" height="80"/>
+        <image name="img_doctor" width="400" height="400"/>
+        <image name="img_person" width="400" height="493"/>
     </resources>
 </document>

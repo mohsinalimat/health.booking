@@ -12,21 +12,18 @@ class OnboardingController: UIViewController {
     
     private var userSelected: UserType?
     
-    @IBAction func onContinue(_ sender: Any) {
-        guard let user = userSelected else { return }
-        switch user {
-        case .patient:
-            performSegue(withIdentifier: "PatientStoryboardSegue", sender: nil)
-        case .doctor:
-            performSegue(withIdentifier: "DoctorStoryboardSegue", sender: nil)
-        }
-    }
-
     @IBAction func onUserSelected(_ sender: UIButton) {
         buttons.forEach({ $0.backgroundColor = .clear; $0.isSelected = false })
         sender.isSelected = !sender.isSelected
-        sender.backgroundColor = sender.isSelected ? .lightBackground : .clear
+        UIView.animate(withDuration: 0.5) {
+            sender.backgroundColor = sender.isSelected ? .lightBackground : .clear
+        }
         userSelected = UserType(rawValue: sender.tag)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let user = userSelected else { return }
+        guard let dvc = segue.destination as? AuthController else { return }
+        dvc.userType = user
+    }
 }
-

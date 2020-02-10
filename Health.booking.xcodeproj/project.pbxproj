@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0068342723F1C62A00C810E4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0068342623F1C62A00C810E4 /* Extension.swift */; };
+		0068342923F1F1F300C810E4 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0068342823F1F1F300C810E4 /* AuthController.swift */; };
+		0068342C23F1F40100C810E4 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0068342B23F1F40100C810E4 /* AuthManager.swift */; };
+		0068342E23F1F83600C810E4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0068342D23F1F83600C810E4 /* User.swift */; };
 		00D5F1C223F1A53400D2746D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D5F1C123F1A53400D2746D /* AppDelegate.swift */; };
 		00D5F1C623F1A53400D2746D /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D5F1C523F1A53400D2746D /* OnboardingController.swift */; };
 		00D5F1C923F1A53400D2746D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D5F1C723F1A53400D2746D /* Main.storyboard */; };
@@ -20,6 +23,9 @@
 
 /* Begin PBXFileReference section */
 		0068342623F1C62A00C810E4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		0068342823F1F1F300C810E4 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		0068342B23F1F40100C810E4 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthManager.swift; path = Health.booking/Controllers/AuthManager.swift; sourceTree = SOURCE_ROOT; };
+		0068342D23F1F83600C810E4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		00D5F1BE23F1A53400D2746D /* Health.booking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Health.booking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D5F1C123F1A53400D2746D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00D5F1C523F1A53400D2746D /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
@@ -51,6 +57,14 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
+		0068342A23F1F3C600C810E4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				0068342B23F1F40100C810E4 /* AuthManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		00D5F1B523F1A53400D2746D = {
 			isa = PBXGroup;
 			children = (
@@ -70,14 +84,15 @@
 		00D5F1C023F1A53400D2746D /* Health.booking */ = {
 			isa = PBXGroup;
 			children = (
-				0068342523F1C61D00C810E4 /* Support */,
-				00D5F1DB23F1BF0500D2746D /* Model */,
 				00D5F1DA23F1BEF800D2746D /* Controllers */,
+				0068342A23F1F3C600C810E4 /* Managers */,
+				00D5F1DB23F1BF0500D2746D /* Model */,
 				00D5F1D523F1BDFE00D2746D /* Storyboard */,
+				0068342523F1C61D00C810E4 /* Support */,
 				00D5F1C123F1A53400D2746D /* AppDelegate.swift */,
 				00D5F1CA23F1A53600D2746D /* Assets.xcassets */,
-				00D5F1CC23F1A53600D2746D /* LaunchScreen.storyboard */,
 				00D5F1CF23F1A53600D2746D /* Info.plist */,
+				00D5F1CC23F1A53600D2746D /* LaunchScreen.storyboard */,
 			);
 			path = Health.booking;
 			sourceTree = "<group>";
@@ -96,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				00D5F1C523F1A53400D2746D /* OnboardingController.swift */,
+				0068342823F1F1F300C810E4 /* AuthController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -104,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				00D5F1DC23F1BF1600D2746D /* UserType.swift */,
+				0068342D23F1F83600C810E4 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,9 +199,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				00D5F1C623F1A53400D2746D /* OnboardingController.swift in Sources */,
+				0068342C23F1F40100C810E4 /* AuthManager.swift in Sources */,
 				00D5F1C223F1A53400D2746D /* AppDelegate.swift in Sources */,
+				0068342923F1F1F300C810E4 /* AuthController.swift in Sources */,
 				00D5F1DD23F1BF1600D2746D /* UserType.swift in Sources */,
 				0068342723F1C62A00C810E4 /* Extension.swift in Sources */,
+				0068342E23F1F83600C810E4 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
