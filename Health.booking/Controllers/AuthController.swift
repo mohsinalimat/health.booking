@@ -10,17 +10,15 @@ class AuthController: UIViewController {
     
     @IBOutlet weak var identificationLabel: UILabel!
     @IBOutlet weak var identificationField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
     
-    var user: User!
+    var userKind: User.Kind!
+    private lazy var user = User(kind: userKind)
     private lazy var authManager = AuthManager(user: user)
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupUI(for: user.kind)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+        setupUI(for: userKind)
     }
     
     @IBAction func loginAction(_ sender: UIButton) {
@@ -31,8 +29,9 @@ class AuthController: UIViewController {
                 break
             case .failure(let error):
                 print(error.localizedDescription)
-                // TODO: Display error to user
-                break
+                DispatchQueue.main.async {
+                    self.dialog(with: error.localizedDescription)
+                }
             }
         }
     }
@@ -44,9 +43,55 @@ extension AuthController {
         let isDoctor = kind == .doctor
         identificationLabel.text = isDoctor ? "Hospital ID" : "Email"
         identificationField.placeholder = isDoctor ? "Hospital-FullName-Code" : "john_doe@mail.com"
+        identificationField.textContentType = isDoctor ? .nickname : .emailAddress
+        identificationField.delegate = self
+        passwordField.delegate = self
     }
     
     private func dialog(with message: String) {
+        let dialog = UIView()
+        dialog.frame = CGRect(x: 16, y: 16,
+                              width: view.bounds.width - 32,
+                              height: 200)
         
+        dialog.backgroundColor = .backgroundColor
+        dialog.clipsToBounds = true
+        dialog.layer.cornerRadius = 10
+        dialog.alpha = 0
+        
+        let textLabel = UILabel()
+        textLabel.frame = dialog.bounds
+        textLabel.textAlignment = .center
+        textLabel.text = message
+        textLabel.numberOfLines = 0
+        
+        dialog.addSubview(textLabel)
+        view.addSubview(dialog)
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            dialog.alpha = 1
+        })
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+            dialog.removeFromSuperview()
+        })
+    }
+}
+
+// MARK: - UITextFieldDelegate
+extension AuthController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == identificationField {
+            user.identification = textField.text
+        }
+        
+        if textField == passwordField {
+            user.password = textField.text
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

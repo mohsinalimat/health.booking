@@ -26,11 +26,20 @@ extension AuthManager.AuthError: LocalizedError {
     var localizedDescription: String {
         switch self {
         case .invalidPassword:
-            return "The password needs to be longer than 8 characters and contain 1 uppercase, 1 special symbol"
+            return """
+            The password needs to have
+            8 characters or more
+            1 uppercase letter or more
+            1 special symbol or more
+            """
         case .invalidEmail:
             return "The email is in an invalid format"
         case .invalidHospitalId:
-            return "The hospital ID doesn't match [Hospita name]-[User full name]-[Hospital Code] format"
+            return """
+            The hospital ID doesn't match
+            [Hospital]-[Username]-[Code]
+            format
+            """
         }
     }
 }
@@ -48,12 +57,12 @@ extension AuthManager {
                 return
             }
             switch userKind {
-            case .doctor:
+            case .patient:
                 guard self.isValidEmail(self.user.identification) else {
                     completion(.failure(AuthError.invalidEmail))
                     return
                 }
-            case .patient:
+            case .doctor:
                 guard self.isHospitalIdValid(self.user.identification) else {
                     completion(.failure(AuthError.invalidHospitalId))
                     return
@@ -61,8 +70,8 @@ extension AuthManager {
             }
             
             // Encrypt identification & password
-            let key = self.encrypt(identification: self.user.identification,
-                                   password: self.user.password)
+            let key = self.encrypt(identification: self.user.identification!,
+                                   password: self.user.password!)
             
             // Return key
             completion(.success(key))
@@ -94,11 +103,11 @@ extension AuthManager {
     
     
     /// Checks if the Hospital Id is valid using the following format
-    /// [Hospital Name] - [User Full Name] - [Hospital Code] (2-64 chars)
+    /// [Hospital Name] - [User Full Name] - [Hospital Code] (2-4 chars)
     /// - Parameter id: The hospitalID of the individual
     private func isHospitalIdValid(_ id: String?) -> Bool {
         guard let hospitalId = id else { return false }
-        let regex = "^[A-Z0-9a-z]+-[A-Za-z_]+-[0-9]+.{2,64}$"
+        let regex = "^[A-Za-z]+-[A-Za-z_]+-[0-9].{2,4}$"
         let idTest = NSPredicate(format: "SELF MATCHES %@",
                                  regex)
         return idTest.evaluate(with: hospitalId)

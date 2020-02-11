@@ -7,14 +7,14 @@
 import Foundation
 
 class User {
-    var identification: String
-    var password: String
+    var identification: String?
+    var password: String?
     var kind: Kind
     
     init(kind: Kind) {
         self.kind = kind
-        self.identification = ""
-        self.password = ""
+        self.identification = nil
+        self.password = nil
     }
     
     enum Kind: Int {

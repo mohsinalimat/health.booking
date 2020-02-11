@@ -24,6 +24,11 @@ class OnboardingController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let userKind = userSelected else { return }
         guard let dvc = segue.destination as? AuthController else { return }
-        dvc.user = User(kind: userKind)
+        dvc.userKind = userKind
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String,
+                                     sender: Any?) -> Bool {
+        userSelected != nil
     }
 }
