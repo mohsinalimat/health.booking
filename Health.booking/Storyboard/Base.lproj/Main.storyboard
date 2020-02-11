@@ -225,11 +225,33 @@
                         <outlet property="identificationField" destination="3Dk-m3-t9L" id="eIR-8s-TXJ"/>
                         <outlet property="identificationLabel" destination="Mv0-9k-oIy" id="XuX-83-5pc"/>
                         <outlet property="passwordField" destination="T6n-bJ-dEc" id="2bR-wD-l0t"/>
+                        <segue destination="o4Y-Tu-BIj" kind="showDetail" identifier="PatientSegue" id="iD8-6z-Bmp"/>
+                        <segue destination="3Un-cD-K4v" kind="showDetail" identifier="DoctorSegue" id="8tV-86-Ch5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wk2-8E-zWt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1037.68115942029" y="137.94642857142856"/>
+        </scene>
+        <!--Patient-->
+        <scene sceneID="yQ3-IO-zvU">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Patient" id="o4Y-Tu-BIj" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="esX-oC-vTa"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mpQ-zJ-zYo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1568" y="236"/>
+        </scene>
+        <!--Doctor-->
+        <scene sceneID="dXv-pD-8fT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Doctor" id="3Un-cD-K4v" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="DmN-Pc-gsR"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lLh-Hk-FfI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1567" y="38"/>
         </scene>
     </scenes>
     <resources>

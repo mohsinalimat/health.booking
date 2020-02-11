@@ -24,9 +24,11 @@ class AuthController: UIViewController {
     @IBAction func loginAction(_ sender: UIButton) {
         authManager.isValid { (result) in
             switch result {
-            case .success(_):
-                // TODO: Perform segue & login
-                break
+            case .success(let key):
+                DispatchQueue.main.async {
+                    let segueId = self.userKind.description + "Segue"
+                    self.performSegue(withIdentifier: segueId, sender: key)
+                }
             case .failure(let error):
                 print(error.localizedDescription)
                 DispatchQueue.main.async {
@@ -67,6 +69,7 @@ extension AuthController {
         
         dialog.addSubview(textLabel)
         view.addSubview(dialog)
+        dialog.layoutIfNeeded()
         
         UIView.animate(withDuration: 0.3, animations: {
             dialog.alpha = 1

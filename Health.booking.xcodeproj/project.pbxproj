@@ -11,6 +11,9 @@
 		0068342923F1F1F300C810E4 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0068342823F1F1F300C810E4 /* AuthController.swift */; };
 		0068342C23F1F40100C810E4 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0068342B23F1F40100C810E4 /* AuthManager.swift */; };
 		0068342E23F1F83600C810E4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0068342D23F1F83600C810E4 /* User.swift */; };
+		0068343223F3422300C810E4 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0068343123F3422300C810E4 /* ProfileManager.swift */; };
+		0068343423F342E700C810E4 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0068343323F342E700C810E4 /* Patient.swift */; };
+		0068343623F342F000C810E4 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0068343523F342F000C810E4 /* Doctor.swift */; };
 		00D5F1C223F1A53400D2746D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D5F1C123F1A53400D2746D /* AppDelegate.swift */; };
 		00D5F1C623F1A53400D2746D /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D5F1C523F1A53400D2746D /* OnboardingController.swift */; };
 		00D5F1C923F1A53400D2746D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D5F1C723F1A53400D2746D /* Main.storyboard */; };
@@ -25,6 +28,9 @@
 		0068342823F1F1F300C810E4 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		0068342B23F1F40100C810E4 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthManager.swift; path = Health.booking/Controllers/AuthManager.swift; sourceTree = SOURCE_ROOT; };
 		0068342D23F1F83600C810E4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0068343123F3422300C810E4 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
+		0068343323F342E700C810E4 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		0068343523F342F000C810E4 /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		00D5F1BE23F1A53400D2746D /* Health.booking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Health.booking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D5F1C123F1A53400D2746D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00D5F1C523F1A53400D2746D /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
@@ -59,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				0068342B23F1F40100C810E4 /* AuthManager.swift */,
+				0068343123F3422300C810E4 /* ProfileManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -118,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				0068342D23F1F83600C810E4 /* User.swift */,
+				0068343323F342E700C810E4 /* Patient.swift */,
+				0068343523F342F000C810E4 /* Doctor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -198,7 +207,10 @@
 				00D5F1C623F1A53400D2746D /* OnboardingController.swift in Sources */,
 				0068342C23F1F40100C810E4 /* AuthManager.swift in Sources */,
 				00D5F1C223F1A53400D2746D /* AppDelegate.swift in Sources */,
+				0068343223F3422300C810E4 /* ProfileManager.swift in Sources */,
 				0068342923F1F1F300C810E4 /* AuthController.swift in Sources */,
+				0068343623F342F000C810E4 /* Doctor.swift in Sources */,
+				0068343423F342E700C810E4 /* Patient.swift in Sources */,
 				0068342723F1C62A00C810E4 /* Extension.swift in Sources */,
 				0068342E23F1F83600C810E4 /* User.swift in Sources */,
 			);

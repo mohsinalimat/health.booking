@@ -11,21 +11,26 @@
         <!--View Controller-->
         <scene sceneID="Gc8-Nw-ug2">
             <objects>
-                <viewController id="Wgj-6L-RRQ" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Wgj-6L-RRQ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Mh-H6-Lsl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doctor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7T-XS-Mua">
-                                <rect key="frame" x="149" y="424" width="116" height="48"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Doctor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7T-XS-Mua">
+                                <rect key="frame" x="64.5" y="424" width="285" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="KOB-eh-RkM">
+                                <rect key="frame" x="197" y="480" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="k7T-XS-Mua" firstAttribute="centerY" secondItem="1Mh-H6-Lsl" secondAttribute="centerY" id="8YV-1j-QN8"/>
+                            <constraint firstItem="KOB-eh-RkM" firstAttribute="top" secondItem="k7T-XS-Mua" secondAttribute="bottom" constant="8" id="Jjs-Zw-9Sv"/>
+                            <constraint firstItem="KOB-eh-RkM" firstAttribute="centerX" secondItem="k7T-XS-Mua" secondAttribute="centerX" id="j9P-EF-Jak"/>
                             <constraint firstItem="k7T-XS-Mua" firstAttribute="centerX" secondItem="1Mh-H6-Lsl" secondAttribute="centerX" id="zMQ-xp-iy1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I01-J8-ech"/>

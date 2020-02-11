@@ -51,19 +51,24 @@ extension AuthManager {
     /// - Parameter completion: Returns a key for success or error for failure
     func isValid(completion: @escaping ((Result<String, AuthError>) -> Void)) {
         DispatchQueue.global().async {
+            
             let userKind = self.user.kind
-            guard self.isPasswordValid(self.user.password) else {
-                completion(.failure(AuthError.invalidPassword))
-                return
+            
+            guard let password = self.user.password?.base64Decoded(),
+                self.isPasswordValid(password)  else {
+                    completion(.failure(AuthError.invalidPassword))
+                    return
             }
+            
+            let identification = self.user.identification?.base64Decoded()
             switch userKind {
             case .patient:
-                guard self.isValidEmail(self.user.identification) else {
+                guard self.isValidEmail(identification) else {
                     completion(.failure(AuthError.invalidEmail))
                     return
                 }
             case .doctor:
-                guard self.isHospitalIdValid(self.user.identification) else {
+                guard self.isHospitalIdValid(identification) else {
                     completion(.failure(AuthError.invalidHospitalId))
                     return
                 }
@@ -114,7 +119,6 @@ extension AuthManager {
     }
     
     private func encrypt(identification: String, password: String) -> String {
-        // TODO: Complete encryption of id & password
-        return "some_random_key_for_testing"
+        identification + "_" + password
     }
 }

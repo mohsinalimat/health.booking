@@ -11,11 +11,28 @@
         <!--View Controller-->
         <scene sceneID="5Ht-ww-YRP">
             <objects>
-                <viewController id="w76-gc-0h6" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="w76-gc-0h6" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fbg-RQ-wkb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Patient" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGU-fT-aFc">
+                                <rect key="frame" x="63.5" y="424" width="287" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="FsO-86-fpw">
+                                <rect key="frame" x="197" y="480" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PGU-fT-aFc" firstAttribute="centerX" secondItem="Fbg-RQ-wkb" secondAttribute="centerX" id="3vs-pA-Chn"/>
+                            <constraint firstItem="FsO-86-fpw" firstAttribute="centerX" secondItem="PGU-fT-aFc" secondAttribute="centerX" id="Ura-ZQ-IBc"/>
+                            <constraint firstItem="FsO-86-fpw" firstAttribute="top" secondItem="PGU-fT-aFc" secondAttribute="bottom" constant="8" id="ZNM-KT-CMu"/>
+                            <constraint firstItem="PGU-fT-aFc" firstAttribute="centerY" secondItem="Fbg-RQ-wkb" secondAttribute="centerY" id="x0E-KQ-qYI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="phg-bs-fPC"/>
                     </view>
                 </viewController>
