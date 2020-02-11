@@ -10,7 +10,7 @@ class OnboardingController: UIViewController {
     
     @IBOutlet var buttons: [UIButton]!
     
-    private var userSelected: UserType?
+    private var userSelected: User.Kind?
     
     @IBAction func onUserSelected(_ sender: UIButton) {
         buttons.forEach({ $0.backgroundColor = .clear; $0.isSelected = false })
@@ -18,12 +18,12 @@ class OnboardingController: UIViewController {
         UIView.animate(withDuration: 0.5) {
             sender.backgroundColor = sender.isSelected ? .lightBackground : .clear
         }
-        userSelected = UserType(rawValue: sender.tag)
+        userSelected = User.Kind(rawValue: sender.tag)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let user = userSelected else { return }
+        guard let userKind = userSelected else { return }
         guard let dvc = segue.destination as? AuthController else { return }
-        dvc.userType = user
+        dvc.user = User(kind: userKind)
     }
 }

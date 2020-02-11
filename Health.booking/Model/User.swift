@@ -6,18 +6,19 @@
 
 import Foundation
 
-protocol User {
-    var identification: String { get set }
-    var password: String { get set }
-}
-
-struct PatientUser: User {
-    var identification: String = ""
-    var password: String = ""
-    // TODO: Add health data
-}
-
-struct DoctorUser: User {
-    var identification: String = ""
-    var password: String = ""
+class User {
+    var identification: String
+    var password: String
+    var kind: Kind
+    
+    init(kind: Kind) {
+        self.kind = kind
+        self.identification = ""
+        self.password = ""
+    }
+    
+    enum Kind: Int {
+        case patient = 0
+        case doctor
+    }
 }

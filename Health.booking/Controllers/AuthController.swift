@@ -11,15 +11,12 @@ class AuthController: UIViewController {
     @IBOutlet weak var identificationLabel: UILabel!
     @IBOutlet weak var identificationField: UITextField!
     
-    var userType: UserType?
-    var user: User?
-    var manager: AuthManager?
+    var user: User!
+    private lazy var authManager = AuthManager(user: user)
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let type = userType else { return }
-        setupUI(for: type)
-        setup(for: type)
+        setupUI(for: user.kind)
     }
     
     override func viewDidLoad() {
@@ -27,34 +24,29 @@ class AuthController: UIViewController {
     }
     
     @IBAction func loginAction(_ sender: UIButton) {
-        manager?.isValid(completion: { (result) in
+        authManager.isValid { (result) in
             switch result {
             case .success(_):
                 // TODO: Perform segue & login
                 break
-            case .failure(_):
+            case .failure(let error):
+                print(error.localizedDescription)
                 // TODO: Display error to user
                 break
             }
-        })
+        }
     }
 }
 
 // MARK: - Methods
 extension AuthController {
-    private func setupUI(for type: UserType) {
-        identificationLabel.text = type == .doctor ? "Hospital ID" : "Email"
-        identificationField.placeholder = type == .doctor ? "Hospital-Name-Code" : "john_doe@email.com"
+    private func setupUI(for kind: User.Kind) {
+        let isDoctor = kind == .doctor
+        identificationLabel.text = isDoctor ? "Hospital ID" : "Email"
+        identificationField.placeholder = isDoctor ? "Hospital-FullName-Code" : "john_doe@mail.com"
     }
     
-    private func setup(for type: UserType) {
-        switch type {
-        case .patient:
-            user = PatientUser()
-            manager = PatientAuthManager()
-        case .doctor:
-            user = DoctorUser()
-            manager = DoctorAuthManager()
-        }
+    private func dialog(with message: String) {
+        
     }
 }

@@ -18,7 +18,6 @@
 		00D5F1CE23F1A53600D2746D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D5F1CC23F1A53600D2746D /* LaunchScreen.storyboard */; };
 		00D5F1D723F1BE1B00D2746D /* Patient.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D5F1D623F1BE1B00D2746D /* Patient.storyboard */; };
 		00D5F1D923F1BE2700D2746D /* Doctor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D5F1D823F1BE2700D2746D /* Doctor.storyboard */; };
-		00D5F1DD23F1BF1600D2746D /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D5F1DC23F1BF1600D2746D /* UserType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 		00D5F1CF23F1A53600D2746D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00D5F1D623F1BE1B00D2746D /* Patient.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Patient.storyboard; sourceTree = "<group>"; };
 		00D5F1D823F1BE2700D2746D /* Doctor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Doctor.storyboard; sourceTree = "<group>"; };
-		00D5F1DC23F1BF1600D2746D /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +117,6 @@
 		00D5F1DB23F1BF0500D2746D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				00D5F1DC23F1BF1600D2746D /* UserType.swift */,
 				0068342D23F1F83600C810E4 /* User.swift */,
 			);
 			path = Model;
@@ -202,7 +199,6 @@
 				0068342C23F1F40100C810E4 /* AuthManager.swift in Sources */,
 				00D5F1C223F1A53400D2746D /* AppDelegate.swift in Sources */,
 				0068342923F1F1F300C810E4 /* AuthController.swift in Sources */,
-				00D5F1DD23F1BF1600D2746D /* UserType.swift in Sources */,
 				0068342723F1C62A00C810E4 /* Extension.swift in Sources */,
 				0068342E23F1F83600C810E4 /* User.swift in Sources */,
 			);
