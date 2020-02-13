@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             AWSClient.shared.appSync = try AWSAppSyncClient(appSyncConfig: appSyncConfig)
             
             print("AppSync initialization successs!")
-            print(cachConfig)
         } catch {
             print("Failed to initialize AWSAppSync")
             print(error)
@@ -35,5 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func applicationWillTerminate(_ application: UIApplication) {
+        AWSClient.shared.appSync = nil
+    }
 }
 

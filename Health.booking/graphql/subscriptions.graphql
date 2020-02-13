@@ -1,4 +1,47 @@
 # this is an auto generated file. This will be overwritten
+subscription OnCreateHealthInfo(
+  $age: Int
+  $height: Float
+  $id: ID
+  $sex: String
+  $weight: Float
+) {
+  onCreateHealthInfo(
+    age: $age
+    height: $height
+    id: $id
+    sex: $sex
+    weight: $weight
+  ) {
+    age
+    height
+    id
+    sex
+    system
+    weight
+  }
+}
+subscription OnCreatePatientUser(
+  $email: String
+  $firstName: String
+  $healthId: ID
+  $id: ID
+  $lastName: String
+) {
+  onCreatePatientUser(
+    email: $email
+    firstName: $firstName
+    healthId: $healthId
+    id: $id
+    lastName: $lastName
+  ) {
+    email
+    firstName
+    healthId
+    id
+    lastName
+  }
+}
 subscription OnCreateUser($id: ID, $key: String, $type: String) {
   onCreateUser(id: $id, key: $key, type: $type) {
     id
@@ -6,10 +49,96 @@ subscription OnCreateUser($id: ID, $key: String, $type: String) {
     type
   }
 }
+subscription OnDeleteHealthInfo(
+  $age: Int
+  $height: Float
+  $id: ID
+  $sex: String
+  $weight: Float
+) {
+  onDeleteHealthInfo(
+    age: $age
+    height: $height
+    id: $id
+    sex: $sex
+    weight: $weight
+  ) {
+    age
+    height
+    id
+    sex
+    system
+    weight
+  }
+}
+subscription OnDeletePatientUser(
+  $email: String
+  $firstName: String
+  $healthId: ID
+  $id: ID
+  $lastName: String
+) {
+  onDeletePatientUser(
+    email: $email
+    firstName: $firstName
+    healthId: $healthId
+    id: $id
+    lastName: $lastName
+  ) {
+    email
+    firstName
+    healthId
+    id
+    lastName
+  }
+}
 subscription OnDeleteUser($id: ID, $key: String, $type: String) {
   onDeleteUser(id: $id, key: $key, type: $type) {
     id
     key
     type
+  }
+}
+subscription OnUpdateHealthInfo(
+  $age: Int
+  $height: Float
+  $id: ID
+  $sex: String
+  $weight: Float
+) {
+  onUpdateHealthInfo(
+    age: $age
+    height: $height
+    id: $id
+    sex: $sex
+    weight: $weight
+  ) {
+    age
+    height
+    id
+    sex
+    system
+    weight
+  }
+}
+subscription OnUpdatePatientUser(
+  $email: String
+  $firstName: String
+  $healthId: ID
+  $id: ID
+  $lastName: String
+) {
+  onUpdatePatientUser(
+    email: $email
+    firstName: $firstName
+    healthId: $healthId
+    id: $id
+    lastName: $lastName
+  ) {
+    email
+    firstName
+    healthId
+    id
+    lastName
   }
 }

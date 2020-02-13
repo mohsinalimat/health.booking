@@ -26,8 +26,7 @@ class AuthController: UIViewController {
             switch result {
             case .success(let key):
                 DispatchQueue.main.async {
-                    let segueId = self.userKind.description + "Segue"
-                    self.performSegue(withIdentifier: segueId, sender: key)
+                    self.performSegue(withIdentifier: "LoginSegue", sender: key)
                 }
             case .failure(let error):
                 print(error.localizedDescription)
@@ -36,6 +35,13 @@ class AuthController: UIViewController {
                 }
             }
         }
+    }
+    
+    // - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let key = sender as? String else { return }
+        guard let dvc = segue.destination as? LoginController else { return }
+        dvc.key = key
     }
 }
 
@@ -86,10 +92,12 @@ extension AuthController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         if textField == identificationField {
             user.identification = textField.text
+            print("User id:", textField.text ?? "")
         }
         
         if textField == passwordField {
             user.password = textField.text
+            print("User password:", textField.text ?? "")
         }
     }
     

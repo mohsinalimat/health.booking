@@ -14,3 +14,6 @@ projects:
         apiId: hr6m2jb2wzhhhcglzolvpwlqra
         frontend: ios
         maxDepth: 2
+extensions:
+  amplify:
+    version: 3

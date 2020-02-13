@@ -1,9 +1,61 @@
 # this is an auto generated file. This will be overwritten
+query GetHealthInfo($id: ID!) {
+  getHealthInfo(id: $id) {
+    age
+    height
+    id
+    sex
+    system
+    weight
+  }
+}
+query GetPatientUser($id: ID!) {
+  getPatientUser(id: $id) {
+    email
+    firstName
+    healthId
+    id
+    lastName
+  }
+}
 query GetUser($key: String!) {
   getUser(key: $key) {
     id
     key
     type
+  }
+}
+query ListHealthInfos(
+  $filter: TableHealthInfoFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listHealthInfos(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      age
+      height
+      id
+      sex
+      system
+      weight
+    }
+    nextToken
+  }
+}
+query ListPatientUsers(
+  $filter: TablePatientUserFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listPatientUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      email
+      firstName
+      healthId
+      id
+      lastName
+    }
+    nextToken
   }
 }
 query ListUsers(

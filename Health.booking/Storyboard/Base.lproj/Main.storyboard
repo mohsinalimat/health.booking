@@ -225,33 +225,49 @@
                         <outlet property="identificationField" destination="3Dk-m3-t9L" id="eIR-8s-TXJ"/>
                         <outlet property="identificationLabel" destination="Mv0-9k-oIy" id="XuX-83-5pc"/>
                         <outlet property="passwordField" destination="T6n-bJ-dEc" id="2bR-wD-l0t"/>
-                        <segue destination="o4Y-Tu-BIj" kind="showDetail" identifier="PatientSegue" id="iD8-6z-Bmp"/>
-                        <segue destination="3Un-cD-K4v" kind="showDetail" identifier="DoctorSegue" id="8tV-86-Ch5"/>
+                        <segue destination="pAH-yZ-qfu" kind="showDetail" identifier="LoginSegue" id="WTI-vF-qQA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wk2-8E-zWt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1037.68115942029" y="137.94642857142856"/>
         </scene>
-        <!--Patient-->
-        <scene sceneID="yQ3-IO-zvU">
+        <!--Login Controller-->
+        <scene sceneID="cHH-Y7-8HD">
             <objects>
-                <viewControllerPlaceholder storyboardName="Patient" id="o4Y-Tu-BIj" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="esX-oC-vTa"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mpQ-zJ-zYo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController modalPresentationStyle="fullScreen" id="pAH-yZ-qfu" customClass="LoginController" customModule="Health_booking" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KUq-UD-JFa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Authenticating" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTh-PC-O7A">
+                                <rect key="frame" x="113" y="430" width="188.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="JFE-EC-YRC">
+                                <rect key="frame" x="197" y="474" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="JFE-EC-YRC" firstAttribute="centerX" secondItem="FTh-PC-O7A" secondAttribute="centerX" id="67e-Vp-fmv"/>
+                            <constraint firstItem="FTh-PC-O7A" firstAttribute="centerX" secondItem="KUq-UD-JFa" secondAttribute="centerX" id="EHe-cB-Hci"/>
+                            <constraint firstItem="FTh-PC-O7A" firstAttribute="centerY" secondItem="KUq-UD-JFa" secondAttribute="centerY" id="aaj-3z-xml"/>
+                            <constraint firstItem="JFE-EC-YRC" firstAttribute="top" secondItem="FTh-PC-O7A" secondAttribute="bottom" constant="8" id="pKp-ij-nKe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qnP-a7-b0X"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TCi-lm-hJ0"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="JFE-EC-YRC" id="4Bt-dy-mIn"/>
+                        <outlet property="textLabel" destination="FTh-PC-O7A" id="yAY-uj-o0H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rEf-bE-7aV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1568" y="236"/>
-        </scene>
-        <!--Doctor-->
-        <scene sceneID="dXv-pD-8fT">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Doctor" id="3Un-cD-K4v" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="DmN-Pc-gsR"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lLh-Hk-FfI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1567" y="38"/>
+            <point key="canvasLocation" x="1886" y="138"/>
         </scene>
     </scenes>
     <resources>

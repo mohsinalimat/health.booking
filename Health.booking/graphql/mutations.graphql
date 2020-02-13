@@ -1,4 +1,23 @@
 # this is an auto generated file. This will be overwritten
+mutation CreateHealthInfo($input: CreateHealthInfoInput!) {
+  createHealthInfo(input: $input) {
+    age
+    height
+    id
+    sex
+    system
+    weight
+  }
+}
+mutation CreatePatientUser($input: CreatePatientUserInput!) {
+  createPatientUser(input: $input) {
+    email
+    firstName
+    healthId
+    id
+    lastName
+  }
+}
 mutation CreateUser($input: CreateUserInput!) {
   createUser(input: $input) {
     id
@@ -6,10 +25,48 @@ mutation CreateUser($input: CreateUserInput!) {
     type
   }
 }
+mutation DeleteHealthInfo($input: DeleteHealthInfoInput!) {
+  deleteHealthInfo(input: $input) {
+    age
+    height
+    id
+    sex
+    system
+    weight
+  }
+}
+mutation DeletePatientUser($input: DeletePatientUserInput!) {
+  deletePatientUser(input: $input) {
+    email
+    firstName
+    healthId
+    id
+    lastName
+  }
+}
 mutation DeleteUser($input: DeleteUserInput!) {
   deleteUser(input: $input) {
     id
     key
     type
+  }
+}
+mutation UpdateHealthInfo($input: UpdateHealthInfoInput!) {
+  updateHealthInfo(input: $input) {
+    age
+    height
+    id
+    sex
+    system
+    weight
+  }
+}
+mutation UpdatePatientUser($input: UpdatePatientUserInput!) {
+  updatePatientUser(input: $input) {
+    email
+    firstName
+    healthId
+    id
+    lastName
   }
 }

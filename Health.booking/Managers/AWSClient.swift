@@ -50,6 +50,13 @@ extension AWSClient {
                             return
                         }
                         
+                        guard result?.errors == nil else {
+                            let errors = result?.errors
+                            errors?.forEach({print($0.localizedDescription)})
+                            completion(.failure(.backendError(err: errors![0])))
+                            return
+                        }
+                        
                         guard let queryData = result?.data else {
                             completion(.failure(.noData))
                             return

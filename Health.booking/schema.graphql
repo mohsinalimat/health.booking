@@ -4,19 +4,62 @@
   subscription: Subscription
 }
 
+type HealthInfo {
+  age: Int!
+  height: Float!
+  id: ID!
+  sex: String!
+  system: String!
+  weight: Float!
+}
+
+type HealthInfoConnection {
+  items: [HealthInfo]
+  nextToken: String
+}
+
 type Mutation {
+  createHealthInfo(input: CreateHealthInfoInput!): HealthInfo
+  createPatientUser(input: CreatePatientUserInput!): PatientUser
   createUser(input: CreateUserInput!): User
+  deleteHealthInfo(input: DeleteHealthInfoInput!): HealthInfo
+  deletePatientUser(input: DeletePatientUserInput!): PatientUser
   deleteUser(input: DeleteUserInput!): User
+  updateHealthInfo(input: UpdateHealthInfoInput!): HealthInfo
+  updatePatientUser(input: UpdatePatientUserInput!): PatientUser
+}
+
+type PatientUser {
+  email: String!
+  firstName: String!
+  healthId: ID!
+  id: ID!
+  lastName: String!
+}
+
+type PatientUserConnection {
+  items: [PatientUser]
+  nextToken: String
 }
 
 type Query {
+  getHealthInfo(id: ID!): HealthInfo
+  getPatientUser(id: ID!): PatientUser
   getUser(key: String!): User
+  listHealthInfos(filter: TableHealthInfoFilterInput, limit: Int, nextToken: String): HealthInfoConnection
+  listPatientUsers(filter: TablePatientUserFilterInput, limit: Int, nextToken: String): PatientUserConnection
   listUsers(filter: TableUserFilterInput, limit: Int, nextToken: String): UserConnection
 }
 
 type Subscription {
+  onCreateHealthInfo(age: Int, height: Float, id: ID, sex: String, weight: Float): HealthInfo @aws_subscribe(mutations : ["createHealthInfo"])
+  onCreatePatientUser(email: String, firstName: String, healthId: ID, id: ID, lastName: String): PatientUser @aws_subscribe(mutations : ["createPatientUser"])
   onCreateUser(id: ID, key: String, type: String): User @aws_subscribe(mutations : ["createUser"])
+  onDeleteHealthInfo(age: Int, height: Float, id: ID, sex: String, weight: Float): HealthInfo @aws_subscribe(mutations : ["deleteHealthInfo"])
+  onDeletePatientUser(email: String, firstName: String, healthId: ID, id: ID, lastName: String): PatientUser @aws_subscribe(mutations : ["deletePatientUser"])
   onDeleteUser(id: ID, key: String, type: String): User @aws_subscribe(mutations : ["deleteUser"])
+  onUpdateHealthInfo(age: Int, height: Float, id: ID, sex: String, weight: Float): HealthInfo @aws_subscribe(mutations : ["updateHealthInfo"])
+  onUpdatePatientUser(email: String, firstName: String, healthId: ID, id: ID, lastName: String): PatientUser @aws_subscribe(mutations : ["updatePatientUser"])
 }
 
 type User {
@@ -30,9 +73,33 @@ type UserConnection {
   nextToken: String
 }
 
+input CreateHealthInfoInput {
+  age: Int!
+  height: Float!
+  sex: String!
+  system: String!
+  weight: Float!
+}
+
+input CreatePatientUserInput {
+  email: String!
+  firstName: String!
+  healthId: ID!
+  id: ID!
+  lastName: String!
+}
+
 input CreateUserInput {
   key: String!
   type: String!
+}
+
+input DeleteHealthInfoInput {
+  id: ID!
+}
+
+input DeletePatientUserInput {
+  id: ID!
 }
 
 input DeleteUserInput {
@@ -54,6 +121,15 @@ input TableFloatFilterInput {
   lt: Float
   ne: Float
   notContains: Float
+}
+
+input TableHealthInfoFilterInput {
+  age: TableIntFilterInput
+  height: TableFloatFilterInput
+  id: TableIDFilterInput
+  sex: TableStringFilterInput
+  system: TableStringFilterInput
+  weight: TableFloatFilterInput
 }
 
 input TableIDFilterInput {
@@ -81,6 +157,13 @@ input TableIntFilterInput {
   notContains: Int
 }
 
+input TablePatientUserFilterInput {
+  email: TableStringFilterInput
+  firstName: TableStringFilterInput
+  id: TableIDFilterInput
+  lastName: TableStringFilterInput
+}
+
 input TableStringFilterInput {
   beginsWith: String
   between: [String]
@@ -98,4 +181,20 @@ input TableUserFilterInput {
   id: TableIDFilterInput
   key: TableStringFilterInput
   type: TableStringFilterInput
+}
+
+input UpdateHealthInfoInput {
+  age: Int
+  height: Float
+  id: ID!
+  sex: String
+  system: String
+  weight: Float
+}
+
+input UpdatePatientUserInput {
+  email: String
+  firstName: String
+  id: ID!
+  lastName: String
 }

@@ -24,6 +24,18 @@ extension UIColor {
         return UIColor.white
     }()
     
+    static let successGreen: UIColor = UIColor(red: 75.0/250.0,
+                                               green: 181.0/255.0,
+                                               blue: 67.0/255.0,
+                                               alpha: 1)
+    
+    static let reversedBackground: UIColor {
+        if #available(iOS 13, *) {
+            return .label
+        } else {
+            return .black
+        }
+    }
 }
 
 // MARK: - String
