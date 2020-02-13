@@ -249,28 +249,52 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="JFE-EC-YRC">
                                 <rect key="frame" x="197" y="474" width="20" height="20"/>
                             </activityIndicatorView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lS8-gk-ZmX">
+                                <rect key="frame" x="182" y="780" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="3eL-XC-bgX"/>
+                                    <constraint firstAttribute="height" constant="50" id="Nlt-p9-ijm"/>
+                                </constraints>
+                                <color key="tintColor" red="0.87188744539999996" green="0.27295213940000002" blue="0.23857894539999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="ic_next"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="JFE-EC-YRC" firstAttribute="centerX" secondItem="FTh-PC-O7A" secondAttribute="centerX" id="67e-Vp-fmv"/>
                             <constraint firstItem="FTh-PC-O7A" firstAttribute="centerX" secondItem="KUq-UD-JFa" secondAttribute="centerX" id="EHe-cB-Hci"/>
                             <constraint firstItem="FTh-PC-O7A" firstAttribute="centerY" secondItem="KUq-UD-JFa" secondAttribute="centerY" id="aaj-3z-xml"/>
+                            <constraint firstItem="lS8-gk-ZmX" firstAttribute="centerX" secondItem="KUq-UD-JFa" secondAttribute="centerX" id="eu9-vC-sdr"/>
+                            <constraint firstItem="qnP-a7-b0X" firstAttribute="bottom" secondItem="lS8-gk-ZmX" secondAttribute="bottom" constant="32" id="j0k-ly-kAJ"/>
                             <constraint firstItem="JFE-EC-YRC" firstAttribute="top" secondItem="FTh-PC-O7A" secondAttribute="bottom" constant="8" id="pKp-ij-nKe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qnP-a7-b0X"/>
                     </view>
                     <navigationItem key="navigationItem" id="TCi-lm-hJ0"/>
                     <connections>
+                        <outlet property="actionButton" destination="lS8-gk-ZmX" id="w5m-mw-Ee1"/>
                         <outlet property="activityIndicator" destination="JFE-EC-YRC" id="4Bt-dy-mIn"/>
                         <outlet property="textLabel" destination="FTh-PC-O7A" id="yAY-uj-o0H"/>
+                        <segue destination="wfS-GS-I1M" kind="show" id="rMS-13-8YT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEf-bE-7aV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1886" y="138"/>
         </scene>
+        <!--Patient-->
+        <scene sceneID="O6W-cZ-tqv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Patient" id="wfS-GS-I1M" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Rc5-ta-Lm2"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tPv-60-6J6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2426" y="62"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="ic_next" width="128" height="128"/>
         <image name="img_doctor" width="400" height="400"/>
         <image name="img_person" width="400" height="493"/>
     </resources>

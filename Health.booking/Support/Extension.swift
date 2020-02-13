@@ -29,13 +29,13 @@ extension UIColor {
                                                blue: 67.0/255.0,
                                                alpha: 1)
     
-    static let reversedBackground: UIColor {
+    static let reversedBackground: UIColor = {
         if #available(iOS 13, *) {
             return .label
         } else {
             return .black
         }
-    }
+    }()
 }
 
 // MARK: - String

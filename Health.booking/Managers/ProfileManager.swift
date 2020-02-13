@@ -8,6 +8,10 @@ import Foundation
 
 class ProfileManager {
     
-    var key: String? = nil
+    var key: String
+    private var client = AWSClient.shared
     
+    init(key: String) {
+        self.key = key
+    }
 }
