@@ -1,0 +1,15 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateUser($id: ID, $key: String, $type: String) {
+  onCreateUser(id: $id, key: $key, type: $type) {
+    id
+    key
+    type
+  }
+}
+subscription OnDeleteUser($id: ID, $key: String, $type: String) {
+  onDeleteUser(id: $id, key: $key, type: $type) {
+    id
+    key
+    type
+  }
+}

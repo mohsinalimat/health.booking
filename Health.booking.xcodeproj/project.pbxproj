@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,9 @@
 		0068343223F3422300C810E4 /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0068343123F3422300C810E4 /* ProfileManager.swift */; };
 		0068343423F342E700C810E4 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0068343323F342E700C810E4 /* Patient.swift */; };
 		0068343623F342F000C810E4 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0068343523F342F000C810E4 /* Doctor.swift */; };
+		007EF61323F5800A00B74F9A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007EF61223F5800A00B74F9A /* API.swift */; };
+		007EF61523F586A900B74F9A /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 007EF61423F586A900B74F9A /* awsconfiguration.json */; };
+		007EF61723F588EC00B74F9A /* AWSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007EF61623F588EC00B74F9A /* AWSClient.swift */; };
 		00D5F1C223F1A53400D2746D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D5F1C123F1A53400D2746D /* AppDelegate.swift */; };
 		00D5F1C623F1A53400D2746D /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D5F1C523F1A53400D2746D /* OnboardingController.swift */; };
 		00D5F1C923F1A53400D2746D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D5F1C723F1A53400D2746D /* Main.storyboard */; };
@@ -21,6 +24,7 @@
 		00D5F1CE23F1A53600D2746D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D5F1CC23F1A53600D2746D /* LaunchScreen.storyboard */; };
 		00D5F1D723F1BE1B00D2746D /* Patient.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D5F1D623F1BE1B00D2746D /* Patient.storyboard */; };
 		00D5F1D923F1BE2700D2746D /* Doctor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D5F1D823F1BE2700D2746D /* Doctor.storyboard */; };
+		34CA00C0B7B6A8345F34AF5D /* Pods_Health_booking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62C726AA8586CA66F984AE37 /* Pods_Health_booking.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +35,9 @@
 		0068343123F3422300C810E4 /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
 		0068343323F342E700C810E4 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		0068343523F342F000C810E4 /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
+		007EF61223F5800A00B74F9A /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		007EF61423F586A900B74F9A /* awsconfiguration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = awsconfiguration.json; path = ../awsconfiguration.json; sourceTree = "<group>"; };
+		007EF61623F588EC00B74F9A /* AWSClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSClient.swift; sourceTree = "<group>"; };
 		00D5F1BE23F1A53400D2746D /* Health.booking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Health.booking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D5F1C123F1A53400D2746D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00D5F1C523F1A53400D2746D /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
@@ -40,6 +47,9 @@
 		00D5F1CF23F1A53600D2746D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00D5F1D623F1BE1B00D2746D /* Patient.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Patient.storyboard; sourceTree = "<group>"; };
 		00D5F1D823F1BE2700D2746D /* Doctor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Doctor.storyboard; sourceTree = "<group>"; };
+		5D6B963E096B99D387649B36 /* Pods-Health.booking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Health.booking.release.xcconfig"; path = "Target Support Files/Pods-Health.booking/Pods-Health.booking.release.xcconfig"; sourceTree = "<group>"; };
+		62C726AA8586CA66F984AE37 /* Pods_Health_booking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Health_booking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA15BCA7EE9E97F669213E88 /* Pods-Health.booking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Health.booking.debug.xcconfig"; path = "Target Support Files/Pods-Health.booking/Pods-Health.booking.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34CA00C0B7B6A8345F34AF5D /* Pods_Health_booking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +77,7 @@
 			children = (
 				0068342B23F1F40100C810E4 /* AuthManager.swift */,
 				0068343123F3422300C810E4 /* ProfileManager.swift */,
+				007EF61623F588EC00B74F9A /* AWSClient.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -75,6 +87,8 @@
 			children = (
 				00D5F1C023F1A53400D2746D /* Health.booking */,
 				00D5F1BF23F1A53400D2746D /* Products */,
+				5DB14F1C770CC339B4437558 /* Pods */,
+				9CBE990D240F7157AC7175A6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +103,7 @@
 		00D5F1C023F1A53400D2746D /* Health.booking */ = {
 			isa = PBXGroup;
 			children = (
+				007EF61223F5800A00B74F9A /* API.swift */,
 				00D5F1DA23F1BEF800D2746D /* Controllers */,
 				0068342A23F1F3C600C810E4 /* Managers */,
 				00D5F1DB23F1BF0500D2746D /* Model */,
@@ -98,6 +113,7 @@
 				00D5F1CA23F1A53600D2746D /* Assets.xcassets */,
 				00D5F1CF23F1A53600D2746D /* Info.plist */,
 				00D5F1CC23F1A53600D2746D /* LaunchScreen.storyboard */,
+				007EF61423F586A900B74F9A /* awsconfiguration.json */,
 			);
 			path = Health.booking;
 			sourceTree = "<group>";
@@ -131,6 +147,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5DB14F1C770CC339B4437558 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BA15BCA7EE9E97F669213E88 /* Pods-Health.booking.debug.xcconfig */,
+				5D6B963E096B99D387649B36 /* Pods-Health.booking.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9CBE990D240F7157AC7175A6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				62C726AA8586CA66F984AE37 /* Pods_Health_booking.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +171,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00D5F1D223F1A53600D2746D /* Build configuration list for PBXNativeTarget "Health.booking" */;
 			buildPhases = (
+				2FBA0EB99A54FC71B24B4DCA /* [CP] Check Pods Manifest.lock */,
 				00D5F1BA23F1A53400D2746D /* Sources */,
 				00D5F1BB23F1A53400D2746D /* Frameworks */,
 				00D5F1BC23F1A53400D2746D /* Resources */,
+				30EDDF4B052EDD50AD3BAAAC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -189,6 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				007EF61523F586A900B74F9A /* awsconfiguration.json in Resources */,
 				00D5F1CE23F1A53600D2746D /* LaunchScreen.storyboard in Resources */,
 				00D5F1CB23F1A53600D2746D /* Assets.xcassets in Resources */,
 				00D5F1D723F1BE1B00D2746D /* Patient.storyboard in Resources */,
@@ -199,6 +235,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2FBA0EB99A54FC71B24B4DCA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Health.booking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		30EDDF4B052EDD50AD3BAAAC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Health.booking/Pods-Health.booking-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Health.booking/Pods-Health.booking-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Health.booking/Pods-Health.booking-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		00D5F1BA23F1A53400D2746D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -208,6 +286,8 @@
 				0068342C23F1F40100C810E4 /* AuthManager.swift in Sources */,
 				00D5F1C223F1A53400D2746D /* AppDelegate.swift in Sources */,
 				0068343223F3422300C810E4 /* ProfileManager.swift in Sources */,
+				007EF61723F588EC00B74F9A /* AWSClient.swift in Sources */,
+				007EF61323F5800A00B74F9A /* API.swift in Sources */,
 				0068342923F1F1F300C810E4 /* AuthController.swift in Sources */,
 				0068343623F342F000C810E4 /* Doctor.swift in Sources */,
 				0068343423F342E700C810E4 /* Patient.swift in Sources */,
@@ -354,6 +434,7 @@
 		};
 		00D5F1D323F1A53600D2746D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA15BCA7EE9E97F669213E88 /* Pods-Health.booking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -373,6 +454,7 @@
 		};
 		00D5F1D423F1A53600D2746D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D6B963E096B99D387649B36 /* Pods-Health.booking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
