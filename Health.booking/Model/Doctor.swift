@@ -21,6 +21,15 @@ struct Doctor {
 }
 
 struct Hospital {
+    var id: String
     var name: String
     var location: String
+    var coordinates: String
+    
+    init(query: GetHospitalQuery.Data.GetHospital) {
+        self.id = query.id
+        self.name = query.name
+        self.location = query.location
+        self.coordinates = query.coordinates
+    }
 }

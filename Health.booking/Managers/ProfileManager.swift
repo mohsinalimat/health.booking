@@ -26,7 +26,7 @@ class ProfileManager {
     enum LoginError: Error {
         case invalidCredentials
         case invalidProfile
-        case invalidHealthData
+        case invalidData
         case unknownError
     }
     
@@ -60,8 +60,8 @@ extension ProfileManager.LoginError: LocalizedError {
             return "Invalid credentials"
         case .invalidProfile:
             return "Couldn't find your profile"
-        case .invalidHealthData:
-            return "No health data available"
+        case .invalidData:
+            return "No data available for user"
         case .unknownError:
             return "Something went wrong please try again"
         }
@@ -135,7 +135,7 @@ extension ProfileManager {
             switch result {
             case .success(let healthData):
                 guard let healthInfo = healthData.getHealthInfo else {
-                    self.profileHandler?(.failure(.invalidHealthData))
+                    self.profileHandler?(.failure(.invalidData))
                     return
                 }
                 
@@ -162,7 +162,6 @@ extension ProfileManager {
                 self.doctorProfile.data = Doctor(query: doctor)
                 self.doctorProfile.key = self.key
                 self.profileHandler?(.success(.profileValid(name: doctor.name)))
-                // TODO: Fetch hospital
                 self.fetchHospital(doctor.hospitalId)
             case .failure(let error):
                 self.profileHandler?(.failure(.unknownError))
@@ -173,7 +172,23 @@ extension ProfileManager {
     }
     
     private func fetchHospital(_ hospitalId: String) {
-        print(hospitalId)
-        profileHandler?(.success(.completed))
+        let query = GetHospitalQuery(id: hospitalId)
+        client.query(query) { (result) in
+            switch result {
+            case .success(let hospitalData):
+                
+                guard let hospital = hospitalData.getHospital else {
+                    self.profileHandler?(.failure(.invalidData))
+                    return
+                }
+                
+                self.doctorProfile.hospital = Hospital(query: hospital)
+                self.profileHandler?(.success(.completed))
+            case .failure(let error):
+                self.profileHandler?(.failure(.unknownError))
+                print("Error while fetching hospital")
+                print(error.localizedDescription)
+            }
+        }
     }
 }

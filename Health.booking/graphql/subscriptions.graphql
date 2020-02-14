@@ -39,6 +39,24 @@ subscription OnCreateHealthInfo(
     weight
   }
 }
+subscription OnCreateHospital(
+  $coordinates: String
+  $id: ID
+  $location: String
+  $name: String
+) {
+  onCreateHospital(
+    coordinates: $coordinates
+    id: $id
+    location: $location
+    name: $name
+  ) {
+    coordinates
+    id
+    location
+    name
+  }
+}
 subscription OnCreatePatientUser(
   $email: String
   $firstName: String
@@ -107,6 +125,24 @@ subscription OnDeleteHealthInfo(
     weight
   }
 }
+subscription OnDeleteHospital(
+  $coordinates: String
+  $id: ID
+  $location: String
+  $name: String
+) {
+  onDeleteHospital(
+    coordinates: $coordinates
+    id: $id
+    location: $location
+    name: $name
+  ) {
+    coordinates
+    id
+    location
+    name
+  }
+}
 subscription OnDeletePatientUser(
   $email: String
   $firstName: String
@@ -173,6 +209,24 @@ subscription OnUpdateHealthInfo(
     sex
     system
     weight
+  }
+}
+subscription OnUpdateHospital(
+  $coordinates: String
+  $id: ID
+  $location: String
+  $name: String
+) {
+  onUpdateHospital(
+    coordinates: $coordinates
+    id: $id
+    location: $location
+    name: $name
+  ) {
+    coordinates
+    id
+    location
+    name
   }
 }
 subscription OnUpdatePatientUser(

@@ -17,6 +17,14 @@ query GetHealthInfo($id: ID!) {
     weight
   }
 }
+query GetHospital($id: ID!) {
+  getHospital(id: $id) {
+    coordinates
+    id
+    location
+    name
+  }
+}
 query GetPatientUser($id: ID!) {
   getPatientUser(id: $id) {
     email
@@ -61,6 +69,21 @@ query ListHealthInfos(
       sex
       system
       weight
+    }
+    nextToken
+  }
+}
+query ListHospitals(
+  $filter: TableHospitalFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listHospitals(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      coordinates
+      id
+      location
+      name
     }
     nextToken
   }

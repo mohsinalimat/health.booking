@@ -17,6 +17,14 @@ mutation CreateHealthInfo($input: CreateHealthInfoInput!) {
     weight
   }
 }
+mutation CreateHospital($input: CreateHospitalInput!) {
+  createHospital(input: $input) {
+    coordinates
+    id
+    location
+    name
+  }
+}
 mutation CreatePatientUser($input: CreatePatientUserInput!) {
   createPatientUser(input: $input) {
     email
@@ -51,6 +59,14 @@ mutation DeleteHealthInfo($input: DeleteHealthInfoInput!) {
     weight
   }
 }
+mutation DeleteHospital($input: DeleteHospitalInput!) {
+  deleteHospital(input: $input) {
+    coordinates
+    id
+    location
+    name
+  }
+}
 mutation DeletePatientUser($input: DeletePatientUserInput!) {
   deletePatientUser(input: $input) {
     email
@@ -83,6 +99,14 @@ mutation UpdateHealthInfo($input: UpdateHealthInfoInput!) {
     sex
     system
     weight
+  }
+}
+mutation UpdateHospital($input: UpdateHospitalInput!) {
+  updateHospital(input: $input) {
+    coordinates
+    id
+    location
+    name
   }
 }
 mutation UpdatePatientUser($input: UpdatePatientUserInput!) {

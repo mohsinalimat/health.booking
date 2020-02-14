@@ -30,17 +30,32 @@ type HealthInfoConnection {
   nextToken: String
 }
 
+type Hospital {
+  coordinates: String!
+  id: ID!
+  location: String!
+  name: String!
+}
+
+type HospitalConnection {
+  items: [Hospital]
+  nextToken: String
+}
+
 type Mutation {
   createDoctor(input: CreateDoctorInput!): Doctor
   createHealthInfo(input: CreateHealthInfoInput!): HealthInfo
+  createHospital(input: CreateHospitalInput!): Hospital
   createPatientUser(input: CreatePatientUserInput!): PatientUser
   createUser(input: CreateUserInput!): User
   deleteDoctor(input: DeleteDoctorInput!): Doctor
   deleteHealthInfo(input: DeleteHealthInfoInput!): HealthInfo
+  deleteHospital(input: DeleteHospitalInput!): Hospital
   deletePatientUser(input: DeletePatientUserInput!): PatientUser
   deleteUser(input: DeleteUserInput!): User
   updateDoctor(input: UpdateDoctorInput!): Doctor
   updateHealthInfo(input: UpdateHealthInfoInput!): HealthInfo
+  updateHospital(input: UpdateHospitalInput!): Hospital
   updatePatientUser(input: UpdatePatientUserInput!): PatientUser
 }
 
@@ -60,10 +75,12 @@ type PatientUserConnection {
 type Query {
   getDoctor(id: ID!): Doctor
   getHealthInfo(id: ID!): HealthInfo
+  getHospital(id: ID!): Hospital
   getPatientUser(id: ID!): PatientUser
   getUser(key: String!): User
   listDoctors(filter: TableDoctorFilterInput, limit: Int, nextToken: String): DoctorConnection
   listHealthInfos(filter: TableHealthInfoFilterInput, limit: Int, nextToken: String): HealthInfoConnection
+  listHospitals(filter: TableHospitalFilterInput, limit: Int, nextToken: String): HospitalConnection
   listPatientUsers(filter: TablePatientUserFilterInput, limit: Int, nextToken: String): PatientUserConnection
   listUsers(filter: TableUserFilterInput, limit: Int, nextToken: String): UserConnection
 }
@@ -71,14 +88,17 @@ type Query {
 type Subscription {
   onCreateDoctor(hospitalId: String, id: ID, name: String, specialty: String): Doctor @aws_subscribe(mutations : ["createDoctor"])
   onCreateHealthInfo(age: Int, height: Float, id: ID, sex: String, weight: Float): HealthInfo @aws_subscribe(mutations : ["createHealthInfo"])
+  onCreateHospital(coordinates: String, id: ID, location: String, name: String): Hospital @aws_subscribe(mutations : ["createHospital"])
   onCreatePatientUser(email: String, firstName: String, healthId: ID, id: ID, lastName: String): PatientUser @aws_subscribe(mutations : ["createPatientUser"])
   onCreateUser(id: ID, key: String, type: String): User @aws_subscribe(mutations : ["createUser"])
   onDeleteDoctor(hospitalId: String, id: ID, name: String, specialty: String): Doctor @aws_subscribe(mutations : ["deleteDoctor"])
   onDeleteHealthInfo(age: Int, height: Float, id: ID, sex: String, weight: Float): HealthInfo @aws_subscribe(mutations : ["deleteHealthInfo"])
+  onDeleteHospital(coordinates: String, id: ID, location: String, name: String): Hospital @aws_subscribe(mutations : ["deleteHospital"])
   onDeletePatientUser(email: String, firstName: String, healthId: ID, id: ID, lastName: String): PatientUser @aws_subscribe(mutations : ["deletePatientUser"])
   onDeleteUser(id: ID, key: String, type: String): User @aws_subscribe(mutations : ["deleteUser"])
   onUpdateDoctor(hospitalId: String, id: ID, name: String, specialty: String): Doctor @aws_subscribe(mutations : ["updateDoctor"])
   onUpdateHealthInfo(age: Int, height: Float, id: ID, sex: String, weight: Float): HealthInfo @aws_subscribe(mutations : ["updateHealthInfo"])
+  onUpdateHospital(coordinates: String, id: ID, location: String, name: String): Hospital @aws_subscribe(mutations : ["updateHospital"])
   onUpdatePatientUser(email: String, firstName: String, healthId: ID, id: ID, lastName: String): PatientUser @aws_subscribe(mutations : ["updatePatientUser"])
 }
 
@@ -108,6 +128,12 @@ input CreateHealthInfoInput {
   weight: Float!
 }
 
+input CreateHospitalInput {
+  coordinates: String!
+  location: String!
+  name: String!
+}
+
 input CreatePatientUserInput {
   email: String!
   firstName: String!
@@ -126,6 +152,10 @@ input DeleteDoctorInput {
 }
 
 input DeleteHealthInfoInput {
+  id: ID!
+}
+
+input DeleteHospitalInput {
   id: ID!
 }
 
@@ -168,6 +198,13 @@ input TableHealthInfoFilterInput {
   sex: TableStringFilterInput
   system: TableStringFilterInput
   weight: TableFloatFilterInput
+}
+
+input TableHospitalFilterInput {
+  coordinates: TableStringFilterInput
+  id: TableIDFilterInput
+  location: TableStringFilterInput
+  name: TableStringFilterInput
 }
 
 input TableIDFilterInput {
@@ -235,6 +272,13 @@ input UpdateHealthInfoInput {
   sex: String
   system: String
   weight: Float
+}
+
+input UpdateHospitalInput {
+  coordinates: String
+  id: ID!
+  location: String
+  name: String
 }
 
 input UpdatePatientUserInput {
