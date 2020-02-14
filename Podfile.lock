@@ -1,16 +1,18 @@
 PODS:
-  - AWSAppSync (2.15.0):
+  - AWSAppSync (3.0.0):
     - AWSCore (~> 2.12.0)
-    - ReachabilitySwift (~> 4.3.1)
+    - ReachabilitySwift (~> 5.0.0)
     - SQLite.swift (~> 0.12.2)
+    - Starscream (~> 3.0.2)
   - AWSCore (2.12.7)
-  - ReachabilitySwift (4.3.1)
+  - ReachabilitySwift (5.0.0)
   - SQLite.swift (0.12.2):
     - SQLite.swift/standard (= 0.12.2)
   - SQLite.swift/standard (0.12.2)
+  - Starscream (3.0.6)
 
 DEPENDENCIES:
-  - AWSAppSync (~> 2.15.0)
+  - AWSAppSync
 
 SPEC REPOS:
   trunk:
@@ -18,13 +20,15 @@ SPEC REPOS:
     - AWSCore
     - ReachabilitySwift
     - SQLite.swift
+    - Starscream
 
 SPEC CHECKSUMS:
-  AWSAppSync: 38d681c93c2909e7fb8d4e1d1f0e816684f9f64f
+  AWSAppSync: 04f615ce0c3a0c815b7bf1ca3d47362a22ed12ca
   AWSCore: 2f0f88ae94a63a198274d683c7d0e18709d7090b
-  ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
+  Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
 
-PODFILE CHECKSUM: 1043ebd5c4c2e747ace60509566f4e36c18d767e
+PODFILE CHECKSUM: abcb8e65b9daf1f2a4f88124497d609f4f191bce
 
 COCOAPODS: 1.8.4

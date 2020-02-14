@@ -9,6 +9,7 @@ import Foundation
 class PatientProfile {
     
     var data: Patient?
+    var healthInfo: HealthInfo?
     var key: String?
     
     static let current = PatientProfile()

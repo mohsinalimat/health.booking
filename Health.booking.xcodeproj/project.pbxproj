@@ -19,6 +19,8 @@
 		007EF61723F588EC00B74F9A /* AWSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007EF61623F588EC00B74F9A /* AWSClient.swift */; };
 		007EF61923F5A90200B74F9A /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007EF61823F5A90200B74F9A /* LoginController.swift */; };
 		007EF61B23F5D23200B74F9A /* PatientProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007EF61A23F5D23200B74F9A /* PatientProfile.swift */; };
+		007EF61F23F5FC3E00B74F9A /* AppointmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007EF61E23F5FC3E00B74F9A /* AppointmentController.swift */; };
+		007EF62123F621E500B74F9A /* DoctorProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007EF62023F621E500B74F9A /* DoctorProfile.swift */; };
 		00D5F1C223F1A53400D2746D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D5F1C123F1A53400D2746D /* AppDelegate.swift */; };
 		00D5F1C623F1A53400D2746D /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D5F1C523F1A53400D2746D /* OnboardingController.swift */; };
 		00D5F1C923F1A53400D2746D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D5F1C723F1A53400D2746D /* Main.storyboard */; };
@@ -42,6 +44,8 @@
 		007EF61623F588EC00B74F9A /* AWSClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSClient.swift; sourceTree = "<group>"; };
 		007EF61823F5A90200B74F9A /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		007EF61A23F5D23200B74F9A /* PatientProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientProfile.swift; sourceTree = "<group>"; };
+		007EF61E23F5FC3E00B74F9A /* AppointmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentController.swift; sourceTree = "<group>"; };
+		007EF62023F621E500B74F9A /* DoctorProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorProfile.swift; sourceTree = "<group>"; };
 		00D5F1BE23F1A53400D2746D /* Health.booking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Health.booking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D5F1C123F1A53400D2746D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00D5F1C523F1A53400D2746D /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
@@ -83,8 +87,16 @@
 				0068343123F3422300C810E4 /* ProfileManager.swift */,
 				007EF61623F588EC00B74F9A /* AWSClient.swift */,
 				007EF61A23F5D23200B74F9A /* PatientProfile.swift */,
+				007EF62023F621E500B74F9A /* DoctorProfile.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		007EF61C23F5FBDA00B74F9A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		00D5F1B523F1A53400D2746D = {
@@ -108,13 +120,14 @@
 		00D5F1C023F1A53400D2746D /* Health.booking */ = {
 			isa = PBXGroup;
 			children = (
-				007EF61223F5800A00B74F9A /* API.swift */,
 				00D5F1DA23F1BEF800D2746D /* Controllers */,
 				0068342A23F1F3C600C810E4 /* Managers */,
 				00D5F1DB23F1BF0500D2746D /* Model */,
+				007EF61C23F5FBDA00B74F9A /* Views */,
 				00D5F1D523F1BDFE00D2746D /* Storyboard */,
 				0068342523F1C61D00C810E4 /* Support */,
 				00D5F1C123F1A53400D2746D /* AppDelegate.swift */,
+				007EF61223F5800A00B74F9A /* API.swift */,
 				00D5F1CA23F1A53600D2746D /* Assets.xcassets */,
 				00D5F1CF23F1A53600D2746D /* Info.plist */,
 				00D5F1CC23F1A53600D2746D /* LaunchScreen.storyboard */,
@@ -139,6 +152,7 @@
 				00D5F1C523F1A53400D2746D /* OnboardingController.swift */,
 				0068342823F1F1F300C810E4 /* AuthController.swift */,
 				007EF61823F5A90200B74F9A /* LoginController.swift */,
+				007EF61E23F5FC3E00B74F9A /* AppointmentController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -297,10 +311,12 @@
 				007EF61723F588EC00B74F9A /* AWSClient.swift in Sources */,
 				007EF61323F5800A00B74F9A /* API.swift in Sources */,
 				0068342923F1F1F300C810E4 /* AuthController.swift in Sources */,
+				007EF61F23F5FC3E00B74F9A /* AppointmentController.swift in Sources */,
 				0068343623F342F000C810E4 /* Doctor.swift in Sources */,
 				0068343423F342E700C810E4 /* Patient.swift in Sources */,
 				0068342723F1C62A00C810E4 /* Extension.swift in Sources */,
 				0068342E23F1F83600C810E4 /* User.swift in Sources */,
+				007EF62123F621E500B74F9A /* DoctorProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

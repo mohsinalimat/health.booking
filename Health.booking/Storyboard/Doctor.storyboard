@@ -22,15 +22,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="KOB-eh-RkM">
-                                <rect key="frame" x="197" y="480" width="20" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="k7T-XS-Mua" firstAttribute="centerY" secondItem="1Mh-H6-Lsl" secondAttribute="centerY" id="8YV-1j-QN8"/>
-                            <constraint firstItem="KOB-eh-RkM" firstAttribute="top" secondItem="k7T-XS-Mua" secondAttribute="bottom" constant="8" id="Jjs-Zw-9Sv"/>
-                            <constraint firstItem="KOB-eh-RkM" firstAttribute="centerX" secondItem="k7T-XS-Mua" secondAttribute="centerX" id="j9P-EF-Jak"/>
                             <constraint firstItem="k7T-XS-Mua" firstAttribute="centerX" secondItem="1Mh-H6-Lsl" secondAttribute="centerX" id="zMQ-xp-iy1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I01-J8-ech"/>

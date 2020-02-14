@@ -11,7 +11,15 @@ struct Patient {
     var firstName: String
     var lastName: String
     var email: String
-    var info: HealthInfo
+    var healthId: String
+    
+    init(query: GetPatientUserQuery.Data.GetPatientUser) {
+        self.id = query.id
+        self.email = query.email
+        self.firstName = query.firstName
+        self.lastName = query.lastName
+        self.healthId = query.healthId
+    }
 }
 
 struct HealthInfo {
@@ -20,7 +28,16 @@ struct HealthInfo {
     var age: Int
     var weight: Double
     var height: Double
-    var system: MeasurmentSystem
+    var system: MeasurementSystem
+    
+    init(query: GetHealthInfoQuery.Data.GetHealthInfo) {
+        self.id = query.id
+        self.sex = PatientSex(rawValue: query.sex) ?? .other
+        self.age = query.age
+        self.weight = query.weight
+        self.height = query.height
+        self.system = MeasurementSystem(rawValue: query.system) ?? .metric
+    }
 }
 
 enum PatientSex: String {
@@ -29,7 +46,7 @@ enum PatientSex: String {
     case other
 }
 
-enum MeasurmentSystem: String {
+enum MeasurementSystem: String {
     case metric
     case imperial
 }

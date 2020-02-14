@@ -42,6 +42,7 @@ class AuthController: UIViewController {
         guard let key = sender as? String else { return }
         guard let dvc = segue.destination as? LoginController else { return }
         dvc.key = key
+        dvc.kind = userKind
     }
 }
 

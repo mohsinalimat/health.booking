@@ -149,7 +149,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="36m-y2-917">
-                                <rect key="frame" x="64" y="342.5" width="286" height="157"/>
+                                <rect key="frame" x="64" y="312.5" width="286" height="157"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ukq-qL-vfe">
                                         <rect key="frame" x="0.0" y="0.0" width="286" height="62.5"/>
@@ -208,7 +208,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="36m-y2-917" firstAttribute="leading" secondItem="L3U-sh-urw" secondAttribute="leading" constant="64" id="7Z9-36-Kfr"/>
-                            <constraint firstItem="36m-y2-917" firstAttribute="centerY" secondItem="Lev-PU-ie4" secondAttribute="centerY" id="Cdo-kl-U02"/>
+                            <constraint firstItem="36m-y2-917" firstAttribute="centerY" secondItem="Lev-PU-ie4" secondAttribute="centerY" constant="-30" id="Cdo-kl-U02"/>
                             <constraint firstItem="cG0-Hv-2ua" firstAttribute="leading" secondItem="L3U-sh-urw" secondAttribute="leading" constant="100" id="Qxo-Mm-fb0"/>
                             <constraint firstItem="L3U-sh-urw" firstAttribute="trailing" secondItem="cG0-Hv-2ua" secondAttribute="trailing" constant="100" id="Sx0-AR-fXd"/>
                             <constraint firstItem="L3U-sh-urw" firstAttribute="trailing" secondItem="36m-y2-917" secondAttribute="trailing" constant="64" id="XvG-Em-eil"/>
@@ -255,7 +255,7 @@
                                     <constraint firstAttribute="width" constant="50" id="3eL-XC-bgX"/>
                                     <constraint firstAttribute="height" constant="50" id="Nlt-p9-ijm"/>
                                 </constraints>
-                                <color key="tintColor" red="0.87188744539999996" green="0.27295213940000002" blue="0.23857894539999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="ic_next"/>
                             </button>
                         </subviews>
@@ -275,7 +275,8 @@
                         <outlet property="actionButton" destination="lS8-gk-ZmX" id="w5m-mw-Ee1"/>
                         <outlet property="activityIndicator" destination="JFE-EC-YRC" id="4Bt-dy-mIn"/>
                         <outlet property="textLabel" destination="FTh-PC-O7A" id="yAY-uj-o0H"/>
-                        <segue destination="wfS-GS-I1M" kind="show" id="rMS-13-8YT"/>
+                        <segue destination="wfS-GS-I1M" kind="show" identifier="PatientSegue" id="rMS-13-8YT"/>
+                        <segue destination="hCz-l9-hVb" kind="show" identifier="DoctorSegue" id="ZVk-au-qNg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rEf-bE-7aV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -291,6 +292,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tPv-60-6J6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2426" y="62"/>
+        </scene>
+        <!--Doctor-->
+        <scene sceneID="uz1-nF-1lV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Doctor" id="hCz-l9-hVb" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="AB1-ZE-86x"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gVa-jb-w4z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2423" y="209"/>
         </scene>
     </scenes>
     <resources>

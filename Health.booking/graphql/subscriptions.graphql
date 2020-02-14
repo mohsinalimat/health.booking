@@ -1,4 +1,22 @@
 # this is an auto generated file. This will be overwritten
+subscription OnCreateDoctor(
+  $hospitalId: String
+  $id: ID
+  $name: String
+  $specialty: String
+) {
+  onCreateDoctor(
+    hospitalId: $hospitalId
+    id: $id
+    name: $name
+    specialty: $specialty
+  ) {
+    hospitalId
+    id
+    name
+    specialty
+  }
+}
 subscription OnCreateHealthInfo(
   $age: Int
   $height: Float
@@ -49,6 +67,24 @@ subscription OnCreateUser($id: ID, $key: String, $type: String) {
     type
   }
 }
+subscription OnDeleteDoctor(
+  $hospitalId: String
+  $id: ID
+  $name: String
+  $specialty: String
+) {
+  onDeleteDoctor(
+    hospitalId: $hospitalId
+    id: $id
+    name: $name
+    specialty: $specialty
+  ) {
+    hospitalId
+    id
+    name
+    specialty
+  }
+}
 subscription OnDeleteHealthInfo(
   $age: Int
   $height: Float
@@ -97,6 +133,24 @@ subscription OnDeleteUser($id: ID, $key: String, $type: String) {
     id
     key
     type
+  }
+}
+subscription OnUpdateDoctor(
+  $hospitalId: String
+  $id: ID
+  $name: String
+  $specialty: String
+) {
+  onUpdateDoctor(
+    hospitalId: $hospitalId
+    id: $id
+    name: $name
+    specialty: $specialty
+  ) {
+    hospitalId
+    id
+    name
+    specialty
   }
 }
 subscription OnUpdateHealthInfo(
