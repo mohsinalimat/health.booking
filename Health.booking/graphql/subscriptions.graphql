@@ -1,4 +1,28 @@
 # this is an auto generated file. This will be overwritten
+subscription OnCreateAppointment(
+  $doctorId: ID
+  $doctorName: String
+  $id: ID
+  $ownerId: ID
+  $ownerName: String
+) {
+  onCreateAppointment(
+    doctorId: $doctorId
+    doctorName: $doctorName
+    id: $id
+    ownerId: $ownerId
+    ownerName: $ownerName
+  ) {
+    date
+    doctorId
+    doctorName
+    id
+    note
+    ownerId
+    ownerName
+    status
+  }
+}
 subscription OnCreateDoctor(
   $hospitalId: String
   $id: ID
@@ -85,6 +109,30 @@ subscription OnCreateUser($id: ID, $key: String, $type: String) {
     type
   }
 }
+subscription OnDeleteAppointment(
+  $doctorId: ID
+  $doctorName: String
+  $id: ID
+  $ownerId: ID
+  $ownerName: String
+) {
+  onDeleteAppointment(
+    doctorId: $doctorId
+    doctorName: $doctorName
+    id: $id
+    ownerId: $ownerId
+    ownerName: $ownerName
+  ) {
+    date
+    doctorId
+    doctorName
+    id
+    note
+    ownerId
+    ownerName
+    status
+  }
+}
 subscription OnDeleteDoctor(
   $hospitalId: String
   $id: ID
@@ -169,6 +217,30 @@ subscription OnDeleteUser($id: ID, $key: String, $type: String) {
     id
     key
     type
+  }
+}
+subscription OnUpdateAppointment(
+  $doctorId: ID
+  $doctorName: String
+  $id: ID
+  $ownerId: ID
+  $ownerName: String
+) {
+  onUpdateAppointment(
+    doctorId: $doctorId
+    doctorName: $doctorName
+    id: $id
+    ownerId: $ownerId
+    ownerName: $ownerName
+  ) {
+    date
+    doctorId
+    doctorName
+    id
+    note
+    ownerId
+    ownerName
+    status
   }
 }
 subscription OnUpdateDoctor(

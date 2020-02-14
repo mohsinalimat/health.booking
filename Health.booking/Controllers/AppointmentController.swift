@@ -9,21 +9,35 @@ import UIKit
 class AppointmentController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-
-    override func viewDidLoad() { super.viewDidLoad() }
+    
+    fileprivate lazy var manager = AppointmentManager()
+    fileprivate var appointments = [Appointment]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.tableFooterView = UIView()
+        manager.getAll { (app) in
+            guard let list = app else { return }
+            self.appointments = list
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource
 extension AppointmentController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return appointments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "TestCell")
-        cell.textLabel?.text = "Label"
-        cell.detailTextLabel?.text = "20-02-2020"
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "AppointmentCell")
+        let item = appointments[indexPath.row]
+        cell.textLabel?.text = "Dr.\(item.doctorName)" 
+        cell.detailTextLabel?.text = item.status.rawValue
         cell.accessoryType = .disclosureIndicator
         return cell
     }

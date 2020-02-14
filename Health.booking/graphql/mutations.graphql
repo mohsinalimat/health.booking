@@ -1,4 +1,16 @@
 # this is an auto generated file. This will be overwritten
+mutation CreateAppointment($input: CreateAppointmentInput!) {
+  createAppointment(input: $input) {
+    date
+    doctorId
+    doctorName
+    id
+    note
+    ownerId
+    ownerName
+    status
+  }
+}
 mutation CreateDoctor($input: CreateDoctorInput!) {
   createDoctor(input: $input) {
     hospitalId
@@ -41,6 +53,18 @@ mutation CreateUser($input: CreateUserInput!) {
     type
   }
 }
+mutation DeleteAppointment($input: DeleteAppointmentInput!) {
+  deleteAppointment(input: $input) {
+    date
+    doctorId
+    doctorName
+    id
+    note
+    ownerId
+    ownerName
+    status
+  }
+}
 mutation DeleteDoctor($input: DeleteDoctorInput!) {
   deleteDoctor(input: $input) {
     hospitalId
@@ -81,6 +105,18 @@ mutation DeleteUser($input: DeleteUserInput!) {
     id
     key
     type
+  }
+}
+mutation UpdateAppointment($input: UpdateAppointmentInput!) {
+  updateAppointment(input: $input) {
+    date
+    doctorId
+    doctorName
+    id
+    note
+    ownerId
+    ownerName
+    status
   }
 }
 mutation UpdateDoctor($input: UpdateDoctorInput!) {
