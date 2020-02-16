@@ -13,7 +13,11 @@ struct Appointment {
     var ownerName: String
     var doctorId: String
     var doctorName: String
-    var date: Date
+    var doctorSpecialty: String
+    var hospitalName: String
+    var hospitalLocation: String
+    var date: String
+    var time: String
     var status: Status
     var note: String
     
@@ -32,9 +36,20 @@ struct Appointment {
         self.doctorName = query.doctorName
         self.note = query.note
         self.status = Status(rawValue: query.status.lowercased()) ?? .upcoming
+        self.doctorSpecialty = query.doctorSpecialty
+        self.hospitalName = query.hospitalName
+        self.hospitalLocation = query.hospitalLocation
+        
+        // Parse data
         let formatter = DateFormatter()
-        formatter.dateFormat = "YYYY-MM-DDThh:mm:ss"
-        let formatedDate = formatter.date(from: query.date)
-        self.date = formatedDate ?? Date()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
+        let parsedDate = formatter.date(from: query.date) ?? Date()
+        formatter.timeStyle = .none
+        formatter.dateStyle = .long
+        self.date = formatter.string(from: parsedDate)
+        formatter.timeStyle = .short
+        formatter.dateStyle = .none
+        self.time = formatter.string(from: parsedDate)
     }
 }
+

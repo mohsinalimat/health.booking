@@ -65,4 +65,27 @@ extension AWSClient {
                         completion(.success(queryData))
         })
     }
+    
+    func mutate<T: GraphQLMutation>(_ mutation: T, completion: ((AWSError?) -> Void)? = nil) {
+        appSync?.perform(mutation: mutation,
+                         queue: .global(),
+                         optimisticUpdate: nil,
+                         conflictResolutionBlock: nil,
+                         resultHandler: { (result, error) in
+                            
+                            guard error == nil else {
+                                completion?(.backendError(err: error!))
+                                return
+                            }
+                            
+                            guard result?.errors == nil else {
+                                let errors = result?.errors
+                                errors?.forEach({print($0.localizedDescription)})
+                                completion?(.backendError(err: errors![0]))
+                                return
+                            }
+                            
+                            completion?(nil)
+        })
+    }
 }

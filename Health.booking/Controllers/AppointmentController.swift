@@ -24,6 +24,13 @@ class AppointmentController: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let dvc = segue.destination as? AppointmentDetailController else {
+            return
+        }
+        dvc.appointment = sender as? Appointment
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -37,8 +44,17 @@ extension AppointmentController: UITableViewDataSource {
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "AppointmentCell")
         let item = appointments[indexPath.row]
         cell.textLabel?.text = "Dr.\(item.doctorName)" 
-        cell.detailTextLabel?.text = item.status.rawValue
+        cell.detailTextLabel?.text = item.status.rawValue.capitalized
         cell.accessoryType = .disclosureIndicator
         return cell
+    }
+}
+
+extension AppointmentController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        cell?.setSelected(false, animated: true)
+        let item = appointments[indexPath.row]
+        performSegue(withIdentifier: "ShowAppointmentSegue", sender: item)
     }
 }

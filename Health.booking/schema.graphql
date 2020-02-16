@@ -8,6 +8,9 @@ type Appointment {
   date: String!
   doctorId: ID!
   doctorName: String!
+  doctorSpecialty: String!
+  hospitalLocation: String!
+  hospitalName: String!
   id: ID!
   note: String!
   ownerId: ID!
@@ -34,6 +37,7 @@ type DoctorConnection {
 
 type HealthInfo {
   age: Int!
+  bloodType: String!
   height: Float!
   id: ID!
   sex: String!
@@ -141,6 +145,9 @@ input CreateAppointmentInput {
   date: String!
   doctorId: ID!
   doctorName: String!
+  doctorSpecialty: String!
+  hospitalLocation: String!
+  hospitalName: String!
   note: String!
   ownerId: ID!
   ownerName: String!
@@ -156,6 +163,7 @@ input CreateDoctorInput {
 
 input CreateHealthInfoInput {
   age: Int!
+  bloodType: String!
   height: Float!
   sex: String!
   system: String!
@@ -206,7 +214,7 @@ input DeleteUserInput {
 }
 
 input TableAppointmentFilterInput {
-  date: TableStringFilterInput
+  date: String!
   doctorId: TableIDFilterInput
   doctorName: TableStringFilterInput
   id: TableIDFilterInput
@@ -242,6 +250,7 @@ input TableFloatFilterInput {
 
 input TableHealthInfoFilterInput {
   age: TableIntFilterInput
+  bloodType: TableStringFilterInput
   height: TableFloatFilterInput
   id: TableIDFilterInput
   sex: TableStringFilterInput
@@ -308,7 +317,6 @@ input TableUserFilterInput {
 }
 
 input UpdateAppointmentInput {
-  date: String
   doctorId: ID
   doctorName: String
   id: ID!
@@ -327,6 +335,7 @@ input UpdateDoctorInput {
 
 input UpdateHealthInfoInput {
   age: Int
+  bloodType: String
   height: Float
   id: ID!
   sex: String

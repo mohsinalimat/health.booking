@@ -4,6 +4,9 @@ query GetAppointment($id: ID!) {
     date
     doctorId
     doctorName
+    doctorSpecialty
+    hospitalLocation
+    hospitalName
     id
     note
     ownerId
@@ -22,6 +25,7 @@ query GetDoctor($id: ID!) {
 query GetHealthInfo($id: ID!) {
   getHealthInfo(id: $id) {
     age
+    bloodType
     height
     id
     sex
@@ -63,6 +67,9 @@ query ListAppointments(
       date
       doctorId
       doctorName
+      doctorSpecialty
+      hospitalLocation
+      hospitalName
       id
       note
       ownerId
@@ -95,6 +102,7 @@ query ListHealthInfos(
   listHealthInfos(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       age
+      bloodType
       height
       id
       sex

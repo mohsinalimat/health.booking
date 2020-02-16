@@ -5,8 +5,8 @@ import AWSAppSync
 public struct CreateAppointmentInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(date: String, doctorId: GraphQLID, doctorName: String, note: String, ownerId: GraphQLID, ownerName: String, status: String) {
-    graphQLMap = ["date": date, "doctorId": doctorId, "doctorName": doctorName, "note": note, "ownerId": ownerId, "ownerName": ownerName, "status": status]
+  public init(date: String, doctorId: GraphQLID, doctorName: String, doctorSpecialty: String, hospitalLocation: String, hospitalName: String, note: String, ownerId: GraphQLID, ownerName: String, status: String) {
+    graphQLMap = ["date": date, "doctorId": doctorId, "doctorName": doctorName, "doctorSpecialty": doctorSpecialty, "hospitalLocation": hospitalLocation, "hospitalName": hospitalName, "note": note, "ownerId": ownerId, "ownerName": ownerName, "status": status]
   }
 
   public var date: String {
@@ -33,6 +33,33 @@ public struct CreateAppointmentInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "doctorName")
+    }
+  }
+
+  public var doctorSpecialty: String {
+    get {
+      return graphQLMap["doctorSpecialty"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "doctorSpecialty")
+    }
+  }
+
+  public var hospitalLocation: String {
+    get {
+      return graphQLMap["hospitalLocation"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "hospitalLocation")
+    }
+  }
+
+  public var hospitalName: String {
+    get {
+      return graphQLMap["hospitalName"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "hospitalName")
     }
   }
 
@@ -120,8 +147,8 @@ public struct CreateDoctorInput: GraphQLMapConvertible {
 public struct CreateHealthInfoInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(age: Int, height: Double, sex: String, system: String, weight: Double) {
-    graphQLMap = ["age": age, "height": height, "sex": sex, "system": system, "weight": weight]
+  public init(age: Int, bloodType: String, height: Double, sex: String, system: String, weight: Double) {
+    graphQLMap = ["age": age, "bloodType": bloodType, "height": height, "sex": sex, "system": system, "weight": weight]
   }
 
   public var age: Int {
@@ -130,6 +157,15 @@ public struct CreateHealthInfoInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "age")
+    }
+  }
+
+  public var bloodType: String {
+    get {
+      return graphQLMap["bloodType"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "bloodType")
     }
   }
 
@@ -389,17 +425,8 @@ public struct DeleteUserInput: GraphQLMapConvertible {
 public struct UpdateAppointmentInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(date: String? = nil, doctorId: GraphQLID? = nil, doctorName: String? = nil, id: GraphQLID, note: String? = nil, ownerId: GraphQLID? = nil, ownerName: String? = nil, status: String? = nil) {
-    graphQLMap = ["date": date, "doctorId": doctorId, "doctorName": doctorName, "id": id, "note": note, "ownerId": ownerId, "ownerName": ownerName, "status": status]
-  }
-
-  public var date: String? {
-    get {
-      return graphQLMap["date"] as! String?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "date")
-    }
+  public init(doctorId: GraphQLID? = nil, doctorName: String? = nil, id: GraphQLID, note: String? = nil, ownerId: GraphQLID? = nil, ownerName: String? = nil, status: String? = nil) {
+    graphQLMap = ["doctorId": doctorId, "doctorName": doctorName, "id": id, "note": note, "ownerId": ownerId, "ownerName": ownerName, "status": status]
   }
 
   public var doctorId: GraphQLID? {
@@ -513,8 +540,8 @@ public struct UpdateDoctorInput: GraphQLMapConvertible {
 public struct UpdateHealthInfoInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(age: Int? = nil, height: Double? = nil, id: GraphQLID, sex: String? = nil, system: String? = nil, weight: Double? = nil) {
-    graphQLMap = ["age": age, "height": height, "id": id, "sex": sex, "system": system, "weight": weight]
+  public init(age: Int? = nil, bloodType: String? = nil, height: Double? = nil, id: GraphQLID, sex: String? = nil, system: String? = nil, weight: Double? = nil) {
+    graphQLMap = ["age": age, "bloodType": bloodType, "height": height, "id": id, "sex": sex, "system": system, "weight": weight]
   }
 
   public var age: Int? {
@@ -523,6 +550,15 @@ public struct UpdateHealthInfoInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "age")
+    }
+  }
+
+  public var bloodType: String? {
+    get {
+      return graphQLMap["bloodType"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "bloodType")
     }
   }
 
@@ -663,13 +699,13 @@ public struct UpdatePatientUserInput: GraphQLMapConvertible {
 public struct TableAppointmentFilterInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(date: TableStringFilterInput? = nil, doctorId: TableIDFilterInput? = nil, doctorName: TableStringFilterInput? = nil, id: TableIDFilterInput? = nil, note: TableStringFilterInput? = nil, ownerId: TableIDFilterInput? = nil, ownerName: TableStringFilterInput? = nil, status: TableStringFilterInput? = nil) {
+  public init(date: String, doctorId: TableIDFilterInput? = nil, doctorName: TableStringFilterInput? = nil, id: TableIDFilterInput? = nil, note: TableStringFilterInput? = nil, ownerId: TableIDFilterInput? = nil, ownerName: TableStringFilterInput? = nil, status: TableStringFilterInput? = nil) {
     graphQLMap = ["date": date, "doctorId": doctorId, "doctorName": doctorName, "id": id, "note": note, "ownerId": ownerId, "ownerName": ownerName, "status": status]
   }
 
-  public var date: TableStringFilterInput? {
+  public var date: String {
     get {
-      return graphQLMap["date"] as! TableStringFilterInput?
+      return graphQLMap["date"] as! String
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "date")
@@ -736,104 +772,6 @@ public struct TableAppointmentFilterInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "status")
-    }
-  }
-}
-
-public struct TableStringFilterInput: GraphQLMapConvertible {
-  public var graphQLMap: GraphQLMap
-
-  public init(beginsWith: String? = nil, between: [String?]? = nil, contains: String? = nil, eq: String? = nil, ge: String? = nil, gt: String? = nil, le: String? = nil, lt: String? = nil, ne: String? = nil, notContains: String? = nil) {
-    graphQLMap = ["beginsWith": beginsWith, "between": between, "contains": contains, "eq": eq, "ge": ge, "gt": gt, "le": le, "lt": lt, "ne": ne, "notContains": notContains]
-  }
-
-  public var beginsWith: String? {
-    get {
-      return graphQLMap["beginsWith"] as! String?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "beginsWith")
-    }
-  }
-
-  public var between: [String?]? {
-    get {
-      return graphQLMap["between"] as! [String?]?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "between")
-    }
-  }
-
-  public var contains: String? {
-    get {
-      return graphQLMap["contains"] as! String?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "contains")
-    }
-  }
-
-  public var eq: String? {
-    get {
-      return graphQLMap["eq"] as! String?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "eq")
-    }
-  }
-
-  public var ge: String? {
-    get {
-      return graphQLMap["ge"] as! String?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "ge")
-    }
-  }
-
-  public var gt: String? {
-    get {
-      return graphQLMap["gt"] as! String?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "gt")
-    }
-  }
-
-  public var le: String? {
-    get {
-      return graphQLMap["le"] as! String?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "le")
-    }
-  }
-
-  public var lt: String? {
-    get {
-      return graphQLMap["lt"] as! String?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "lt")
-    }
-  }
-
-  public var ne: String? {
-    get {
-      return graphQLMap["ne"] as! String?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "ne")
-    }
-  }
-
-  public var notContains: String? {
-    get {
-      return graphQLMap["notContains"] as! String?
-    }
-    set {
-      graphQLMap.updateValue(newValue, forKey: "notContains")
     }
   }
 }
@@ -936,6 +874,104 @@ public struct TableIDFilterInput: GraphQLMapConvertible {
   }
 }
 
+public struct TableStringFilterInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(beginsWith: String? = nil, between: [String?]? = nil, contains: String? = nil, eq: String? = nil, ge: String? = nil, gt: String? = nil, le: String? = nil, lt: String? = nil, ne: String? = nil, notContains: String? = nil) {
+    graphQLMap = ["beginsWith": beginsWith, "between": between, "contains": contains, "eq": eq, "ge": ge, "gt": gt, "le": le, "lt": lt, "ne": ne, "notContains": notContains]
+  }
+
+  public var beginsWith: String? {
+    get {
+      return graphQLMap["beginsWith"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "beginsWith")
+    }
+  }
+
+  public var between: [String?]? {
+    get {
+      return graphQLMap["between"] as! [String?]?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "between")
+    }
+  }
+
+  public var contains: String? {
+    get {
+      return graphQLMap["contains"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "contains")
+    }
+  }
+
+  public var eq: String? {
+    get {
+      return graphQLMap["eq"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "eq")
+    }
+  }
+
+  public var ge: String? {
+    get {
+      return graphQLMap["ge"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "ge")
+    }
+  }
+
+  public var gt: String? {
+    get {
+      return graphQLMap["gt"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "gt")
+    }
+  }
+
+  public var le: String? {
+    get {
+      return graphQLMap["le"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "le")
+    }
+  }
+
+  public var lt: String? {
+    get {
+      return graphQLMap["lt"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "lt")
+    }
+  }
+
+  public var ne: String? {
+    get {
+      return graphQLMap["ne"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "ne")
+    }
+  }
+
+  public var notContains: String? {
+    get {
+      return graphQLMap["notContains"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "notContains")
+    }
+  }
+}
+
 public struct TableDoctorFilterInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
@@ -983,8 +1019,8 @@ public struct TableDoctorFilterInput: GraphQLMapConvertible {
 public struct TableHealthInfoFilterInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(age: TableIntFilterInput? = nil, height: TableFloatFilterInput? = nil, id: TableIDFilterInput? = nil, sex: TableStringFilterInput? = nil, system: TableStringFilterInput? = nil, weight: TableFloatFilterInput? = nil) {
-    graphQLMap = ["age": age, "height": height, "id": id, "sex": sex, "system": system, "weight": weight]
+  public init(age: TableIntFilterInput? = nil, bloodType: TableStringFilterInput? = nil, height: TableFloatFilterInput? = nil, id: TableIDFilterInput? = nil, sex: TableStringFilterInput? = nil, system: TableStringFilterInput? = nil, weight: TableFloatFilterInput? = nil) {
+    graphQLMap = ["age": age, "bloodType": bloodType, "height": height, "id": id, "sex": sex, "system": system, "weight": weight]
   }
 
   public var age: TableIntFilterInput? {
@@ -993,6 +1029,15 @@ public struct TableHealthInfoFilterInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "age")
+    }
+  }
+
+  public var bloodType: TableStringFilterInput? {
+    get {
+      return graphQLMap["bloodType"] as! TableStringFilterInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "bloodType")
     }
   }
 
@@ -1345,7 +1390,7 @@ public struct TableUserFilterInput: GraphQLMapConvertible {
 
 public final class CreateAppointmentMutation: GraphQLMutation {
   public static let operationString =
-    "mutation CreateAppointment($input: CreateAppointmentInput!) {\n  createAppointment(input: $input) {\n    __typename\n    date\n    doctorId\n    doctorName\n    id\n    note\n    ownerId\n    ownerName\n    status\n  }\n}"
+    "mutation CreateAppointment($input: CreateAppointmentInput!) {\n  createAppointment(input: $input) {\n    __typename\n    date\n    doctorId\n    doctorName\n    doctorSpecialty\n    hospitalLocation\n    hospitalName\n    id\n    note\n    ownerId\n    ownerName\n    status\n  }\n}"
 
   public var input: CreateAppointmentInput
 
@@ -1391,6 +1436,9 @@ public final class CreateAppointmentMutation: GraphQLMutation {
         GraphQLField("date", type: .nonNull(.scalar(String.self))),
         GraphQLField("doctorId", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("doctorName", type: .nonNull(.scalar(String.self))),
+        GraphQLField("doctorSpecialty", type: .nonNull(.scalar(String.self))),
+        GraphQLField("hospitalLocation", type: .nonNull(.scalar(String.self))),
+        GraphQLField("hospitalName", type: .nonNull(.scalar(String.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("note", type: .nonNull(.scalar(String.self))),
         GraphQLField("ownerId", type: .nonNull(.scalar(GraphQLID.self))),
@@ -1404,8 +1452,8 @@ public final class CreateAppointmentMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(date: String, doctorId: GraphQLID, doctorName: String, id: GraphQLID, note: String, ownerId: GraphQLID, ownerName: String, status: String) {
-        self.init(snapshot: ["__typename": "Appointment", "date": date, "doctorId": doctorId, "doctorName": doctorName, "id": id, "note": note, "ownerId": ownerId, "ownerName": ownerName, "status": status])
+      public init(date: String, doctorId: GraphQLID, doctorName: String, doctorSpecialty: String, hospitalLocation: String, hospitalName: String, id: GraphQLID, note: String, ownerId: GraphQLID, ownerName: String, status: String) {
+        self.init(snapshot: ["__typename": "Appointment", "date": date, "doctorId": doctorId, "doctorName": doctorName, "doctorSpecialty": doctorSpecialty, "hospitalLocation": hospitalLocation, "hospitalName": hospitalName, "id": id, "note": note, "ownerId": ownerId, "ownerName": ownerName, "status": status])
       }
 
       public var __typename: String {
@@ -1441,6 +1489,33 @@ public final class CreateAppointmentMutation: GraphQLMutation {
         }
         set {
           snapshot.updateValue(newValue, forKey: "doctorName")
+        }
+      }
+
+      public var doctorSpecialty: String {
+        get {
+          return snapshot["doctorSpecialty"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "doctorSpecialty")
+        }
+      }
+
+      public var hospitalLocation: String {
+        get {
+          return snapshot["hospitalLocation"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "hospitalLocation")
+        }
+      }
+
+      public var hospitalName: String {
+        get {
+          return snapshot["hospitalName"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "hospitalName")
         }
       }
 
@@ -1603,7 +1678,7 @@ public final class CreateDoctorMutation: GraphQLMutation {
 
 public final class CreateHealthInfoMutation: GraphQLMutation {
   public static let operationString =
-    "mutation CreateHealthInfo($input: CreateHealthInfoInput!) {\n  createHealthInfo(input: $input) {\n    __typename\n    age\n    height\n    id\n    sex\n    system\n    weight\n  }\n}"
+    "mutation CreateHealthInfo($input: CreateHealthInfoInput!) {\n  createHealthInfo(input: $input) {\n    __typename\n    age\n    bloodType\n    height\n    id\n    sex\n    system\n    weight\n  }\n}"
 
   public var input: CreateHealthInfoInput
 
@@ -1647,6 +1722,7 @@ public final class CreateHealthInfoMutation: GraphQLMutation {
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("age", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("bloodType", type: .nonNull(.scalar(String.self))),
         GraphQLField("height", type: .nonNull(.scalar(Double.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("sex", type: .nonNull(.scalar(String.self))),
@@ -1660,8 +1736,8 @@ public final class CreateHealthInfoMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(age: Int, height: Double, id: GraphQLID, sex: String, system: String, weight: Double) {
-        self.init(snapshot: ["__typename": "HealthInfo", "age": age, "height": height, "id": id, "sex": sex, "system": system, "weight": weight])
+      public init(age: Int, bloodType: String, height: Double, id: GraphQLID, sex: String, system: String, weight: Double) {
+        self.init(snapshot: ["__typename": "HealthInfo", "age": age, "bloodType": bloodType, "height": height, "id": id, "sex": sex, "system": system, "weight": weight])
       }
 
       public var __typename: String {
@@ -1679,6 +1755,15 @@ public final class CreateHealthInfoMutation: GraphQLMutation {
         }
         set {
           snapshot.updateValue(newValue, forKey: "age")
+        }
+      }
+
+      public var bloodType: String {
+        get {
+          return snapshot["bloodType"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "bloodType")
         }
       }
 
@@ -2059,7 +2144,7 @@ public final class CreateUserMutation: GraphQLMutation {
 
 public final class DeleteAppointmentMutation: GraphQLMutation {
   public static let operationString =
-    "mutation DeleteAppointment($input: DeleteAppointmentInput!) {\n  deleteAppointment(input: $input) {\n    __typename\n    date\n    doctorId\n    doctorName\n    id\n    note\n    ownerId\n    ownerName\n    status\n  }\n}"
+    "mutation DeleteAppointment($input: DeleteAppointmentInput!) {\n  deleteAppointment(input: $input) {\n    __typename\n    date\n    doctorId\n    doctorName\n    doctorSpecialty\n    hospitalLocation\n    hospitalName\n    id\n    note\n    ownerId\n    ownerName\n    status\n  }\n}"
 
   public var input: DeleteAppointmentInput
 
@@ -2105,6 +2190,9 @@ public final class DeleteAppointmentMutation: GraphQLMutation {
         GraphQLField("date", type: .nonNull(.scalar(String.self))),
         GraphQLField("doctorId", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("doctorName", type: .nonNull(.scalar(String.self))),
+        GraphQLField("doctorSpecialty", type: .nonNull(.scalar(String.self))),
+        GraphQLField("hospitalLocation", type: .nonNull(.scalar(String.self))),
+        GraphQLField("hospitalName", type: .nonNull(.scalar(String.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("note", type: .nonNull(.scalar(String.self))),
         GraphQLField("ownerId", type: .nonNull(.scalar(GraphQLID.self))),
@@ -2118,8 +2206,8 @@ public final class DeleteAppointmentMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(date: String, doctorId: GraphQLID, doctorName: String, id: GraphQLID, note: String, ownerId: GraphQLID, ownerName: String, status: String) {
-        self.init(snapshot: ["__typename": "Appointment", "date": date, "doctorId": doctorId, "doctorName": doctorName, "id": id, "note": note, "ownerId": ownerId, "ownerName": ownerName, "status": status])
+      public init(date: String, doctorId: GraphQLID, doctorName: String, doctorSpecialty: String, hospitalLocation: String, hospitalName: String, id: GraphQLID, note: String, ownerId: GraphQLID, ownerName: String, status: String) {
+        self.init(snapshot: ["__typename": "Appointment", "date": date, "doctorId": doctorId, "doctorName": doctorName, "doctorSpecialty": doctorSpecialty, "hospitalLocation": hospitalLocation, "hospitalName": hospitalName, "id": id, "note": note, "ownerId": ownerId, "ownerName": ownerName, "status": status])
       }
 
       public var __typename: String {
@@ -2155,6 +2243,33 @@ public final class DeleteAppointmentMutation: GraphQLMutation {
         }
         set {
           snapshot.updateValue(newValue, forKey: "doctorName")
+        }
+      }
+
+      public var doctorSpecialty: String {
+        get {
+          return snapshot["doctorSpecialty"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "doctorSpecialty")
+        }
+      }
+
+      public var hospitalLocation: String {
+        get {
+          return snapshot["hospitalLocation"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "hospitalLocation")
+        }
+      }
+
+      public var hospitalName: String {
+        get {
+          return snapshot["hospitalName"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "hospitalName")
         }
       }
 
@@ -2317,7 +2432,7 @@ public final class DeleteDoctorMutation: GraphQLMutation {
 
 public final class DeleteHealthInfoMutation: GraphQLMutation {
   public static let operationString =
-    "mutation DeleteHealthInfo($input: DeleteHealthInfoInput!) {\n  deleteHealthInfo(input: $input) {\n    __typename\n    age\n    height\n    id\n    sex\n    system\n    weight\n  }\n}"
+    "mutation DeleteHealthInfo($input: DeleteHealthInfoInput!) {\n  deleteHealthInfo(input: $input) {\n    __typename\n    age\n    bloodType\n    height\n    id\n    sex\n    system\n    weight\n  }\n}"
 
   public var input: DeleteHealthInfoInput
 
@@ -2361,6 +2476,7 @@ public final class DeleteHealthInfoMutation: GraphQLMutation {
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("age", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("bloodType", type: .nonNull(.scalar(String.self))),
         GraphQLField("height", type: .nonNull(.scalar(Double.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("sex", type: .nonNull(.scalar(String.self))),
@@ -2374,8 +2490,8 @@ public final class DeleteHealthInfoMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(age: Int, height: Double, id: GraphQLID, sex: String, system: String, weight: Double) {
-        self.init(snapshot: ["__typename": "HealthInfo", "age": age, "height": height, "id": id, "sex": sex, "system": system, "weight": weight])
+      public init(age: Int, bloodType: String, height: Double, id: GraphQLID, sex: String, system: String, weight: Double) {
+        self.init(snapshot: ["__typename": "HealthInfo", "age": age, "bloodType": bloodType, "height": height, "id": id, "sex": sex, "system": system, "weight": weight])
       }
 
       public var __typename: String {
@@ -2393,6 +2509,15 @@ public final class DeleteHealthInfoMutation: GraphQLMutation {
         }
         set {
           snapshot.updateValue(newValue, forKey: "age")
+        }
+      }
+
+      public var bloodType: String {
+        get {
+          return snapshot["bloodType"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "bloodType")
         }
       }
 
@@ -2773,7 +2898,7 @@ public final class DeleteUserMutation: GraphQLMutation {
 
 public final class UpdateAppointmentMutation: GraphQLMutation {
   public static let operationString =
-    "mutation UpdateAppointment($input: UpdateAppointmentInput!) {\n  updateAppointment(input: $input) {\n    __typename\n    date\n    doctorId\n    doctorName\n    id\n    note\n    ownerId\n    ownerName\n    status\n  }\n}"
+    "mutation UpdateAppointment($input: UpdateAppointmentInput!) {\n  updateAppointment(input: $input) {\n    __typename\n    date\n    doctorId\n    doctorName\n    doctorSpecialty\n    hospitalLocation\n    hospitalName\n    id\n    note\n    ownerId\n    ownerName\n    status\n  }\n}"
 
   public var input: UpdateAppointmentInput
 
@@ -2819,6 +2944,9 @@ public final class UpdateAppointmentMutation: GraphQLMutation {
         GraphQLField("date", type: .nonNull(.scalar(String.self))),
         GraphQLField("doctorId", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("doctorName", type: .nonNull(.scalar(String.self))),
+        GraphQLField("doctorSpecialty", type: .nonNull(.scalar(String.self))),
+        GraphQLField("hospitalLocation", type: .nonNull(.scalar(String.self))),
+        GraphQLField("hospitalName", type: .nonNull(.scalar(String.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("note", type: .nonNull(.scalar(String.self))),
         GraphQLField("ownerId", type: .nonNull(.scalar(GraphQLID.self))),
@@ -2832,8 +2960,8 @@ public final class UpdateAppointmentMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(date: String, doctorId: GraphQLID, doctorName: String, id: GraphQLID, note: String, ownerId: GraphQLID, ownerName: String, status: String) {
-        self.init(snapshot: ["__typename": "Appointment", "date": date, "doctorId": doctorId, "doctorName": doctorName, "id": id, "note": note, "ownerId": ownerId, "ownerName": ownerName, "status": status])
+      public init(date: String, doctorId: GraphQLID, doctorName: String, doctorSpecialty: String, hospitalLocation: String, hospitalName: String, id: GraphQLID, note: String, ownerId: GraphQLID, ownerName: String, status: String) {
+        self.init(snapshot: ["__typename": "Appointment", "date": date, "doctorId": doctorId, "doctorName": doctorName, "doctorSpecialty": doctorSpecialty, "hospitalLocation": hospitalLocation, "hospitalName": hospitalName, "id": id, "note": note, "ownerId": ownerId, "ownerName": ownerName, "status": status])
       }
 
       public var __typename: String {
@@ -2869,6 +2997,33 @@ public final class UpdateAppointmentMutation: GraphQLMutation {
         }
         set {
           snapshot.updateValue(newValue, forKey: "doctorName")
+        }
+      }
+
+      public var doctorSpecialty: String {
+        get {
+          return snapshot["doctorSpecialty"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "doctorSpecialty")
+        }
+      }
+
+      public var hospitalLocation: String {
+        get {
+          return snapshot["hospitalLocation"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "hospitalLocation")
+        }
+      }
+
+      public var hospitalName: String {
+        get {
+          return snapshot["hospitalName"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "hospitalName")
         }
       }
 
@@ -3031,7 +3186,7 @@ public final class UpdateDoctorMutation: GraphQLMutation {
 
 public final class UpdateHealthInfoMutation: GraphQLMutation {
   public static let operationString =
-    "mutation UpdateHealthInfo($input: UpdateHealthInfoInput!) {\n  updateHealthInfo(input: $input) {\n    __typename\n    age\n    height\n    id\n    sex\n    system\n    weight\n  }\n}"
+    "mutation UpdateHealthInfo($input: UpdateHealthInfoInput!) {\n  updateHealthInfo(input: $input) {\n    __typename\n    age\n    bloodType\n    height\n    id\n    sex\n    system\n    weight\n  }\n}"
 
   public var input: UpdateHealthInfoInput
 
@@ -3075,6 +3230,7 @@ public final class UpdateHealthInfoMutation: GraphQLMutation {
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("age", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("bloodType", type: .nonNull(.scalar(String.self))),
         GraphQLField("height", type: .nonNull(.scalar(Double.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("sex", type: .nonNull(.scalar(String.self))),
@@ -3088,8 +3244,8 @@ public final class UpdateHealthInfoMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(age: Int, height: Double, id: GraphQLID, sex: String, system: String, weight: Double) {
-        self.init(snapshot: ["__typename": "HealthInfo", "age": age, "height": height, "id": id, "sex": sex, "system": system, "weight": weight])
+      public init(age: Int, bloodType: String, height: Double, id: GraphQLID, sex: String, system: String, weight: Double) {
+        self.init(snapshot: ["__typename": "HealthInfo", "age": age, "bloodType": bloodType, "height": height, "id": id, "sex": sex, "system": system, "weight": weight])
       }
 
       public var __typename: String {
@@ -3107,6 +3263,15 @@ public final class UpdateHealthInfoMutation: GraphQLMutation {
         }
         set {
           snapshot.updateValue(newValue, forKey: "age")
+        }
+      }
+
+      public var bloodType: String {
+        get {
+          return snapshot["bloodType"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "bloodType")
         }
       }
 
@@ -3388,7 +3553,7 @@ public final class UpdatePatientUserMutation: GraphQLMutation {
 
 public final class GetAppointmentQuery: GraphQLQuery {
   public static let operationString =
-    "query GetAppointment($id: ID!) {\n  getAppointment(id: $id) {\n    __typename\n    date\n    doctorId\n    doctorName\n    id\n    note\n    ownerId\n    ownerName\n    status\n  }\n}"
+    "query GetAppointment($id: ID!) {\n  getAppointment(id: $id) {\n    __typename\n    date\n    doctorId\n    doctorName\n    doctorSpecialty\n    hospitalLocation\n    hospitalName\n    id\n    note\n    ownerId\n    ownerName\n    status\n  }\n}"
 
   public var id: GraphQLID
 
@@ -3434,6 +3599,9 @@ public final class GetAppointmentQuery: GraphQLQuery {
         GraphQLField("date", type: .nonNull(.scalar(String.self))),
         GraphQLField("doctorId", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("doctorName", type: .nonNull(.scalar(String.self))),
+        GraphQLField("doctorSpecialty", type: .nonNull(.scalar(String.self))),
+        GraphQLField("hospitalLocation", type: .nonNull(.scalar(String.self))),
+        GraphQLField("hospitalName", type: .nonNull(.scalar(String.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("note", type: .nonNull(.scalar(String.self))),
         GraphQLField("ownerId", type: .nonNull(.scalar(GraphQLID.self))),
@@ -3447,8 +3615,8 @@ public final class GetAppointmentQuery: GraphQLQuery {
         self.snapshot = snapshot
       }
 
-      public init(date: String, doctorId: GraphQLID, doctorName: String, id: GraphQLID, note: String, ownerId: GraphQLID, ownerName: String, status: String) {
-        self.init(snapshot: ["__typename": "Appointment", "date": date, "doctorId": doctorId, "doctorName": doctorName, "id": id, "note": note, "ownerId": ownerId, "ownerName": ownerName, "status": status])
+      public init(date: String, doctorId: GraphQLID, doctorName: String, doctorSpecialty: String, hospitalLocation: String, hospitalName: String, id: GraphQLID, note: String, ownerId: GraphQLID, ownerName: String, status: String) {
+        self.init(snapshot: ["__typename": "Appointment", "date": date, "doctorId": doctorId, "doctorName": doctorName, "doctorSpecialty": doctorSpecialty, "hospitalLocation": hospitalLocation, "hospitalName": hospitalName, "id": id, "note": note, "ownerId": ownerId, "ownerName": ownerName, "status": status])
       }
 
       public var __typename: String {
@@ -3484,6 +3652,33 @@ public final class GetAppointmentQuery: GraphQLQuery {
         }
         set {
           snapshot.updateValue(newValue, forKey: "doctorName")
+        }
+      }
+
+      public var doctorSpecialty: String {
+        get {
+          return snapshot["doctorSpecialty"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "doctorSpecialty")
+        }
+      }
+
+      public var hospitalLocation: String {
+        get {
+          return snapshot["hospitalLocation"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "hospitalLocation")
+        }
+      }
+
+      public var hospitalName: String {
+        get {
+          return snapshot["hospitalName"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "hospitalName")
         }
       }
 
@@ -3646,7 +3841,7 @@ public final class GetDoctorQuery: GraphQLQuery {
 
 public final class GetHealthInfoQuery: GraphQLQuery {
   public static let operationString =
-    "query GetHealthInfo($id: ID!) {\n  getHealthInfo(id: $id) {\n    __typename\n    age\n    height\n    id\n    sex\n    system\n    weight\n  }\n}"
+    "query GetHealthInfo($id: ID!) {\n  getHealthInfo(id: $id) {\n    __typename\n    age\n    bloodType\n    height\n    id\n    sex\n    system\n    weight\n  }\n}"
 
   public var id: GraphQLID
 
@@ -3690,6 +3885,7 @@ public final class GetHealthInfoQuery: GraphQLQuery {
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("age", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("bloodType", type: .nonNull(.scalar(String.self))),
         GraphQLField("height", type: .nonNull(.scalar(Double.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("sex", type: .nonNull(.scalar(String.self))),
@@ -3703,8 +3899,8 @@ public final class GetHealthInfoQuery: GraphQLQuery {
         self.snapshot = snapshot
       }
 
-      public init(age: Int, height: Double, id: GraphQLID, sex: String, system: String, weight: Double) {
-        self.init(snapshot: ["__typename": "HealthInfo", "age": age, "height": height, "id": id, "sex": sex, "system": system, "weight": weight])
+      public init(age: Int, bloodType: String, height: Double, id: GraphQLID, sex: String, system: String, weight: Double) {
+        self.init(snapshot: ["__typename": "HealthInfo", "age": age, "bloodType": bloodType, "height": height, "id": id, "sex": sex, "system": system, "weight": weight])
       }
 
       public var __typename: String {
@@ -3722,6 +3918,15 @@ public final class GetHealthInfoQuery: GraphQLQuery {
         }
         set {
           snapshot.updateValue(newValue, forKey: "age")
+        }
+      }
+
+      public var bloodType: String {
+        get {
+          return snapshot["bloodType"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "bloodType")
         }
       }
 
@@ -4102,7 +4307,7 @@ public final class GetUserQuery: GraphQLQuery {
 
 public final class ListAppointmentsQuery: GraphQLQuery {
   public static let operationString =
-    "query ListAppointments($filter: TableAppointmentFilterInput, $limit: Int, $nextToken: String) {\n  listAppointments(filter: $filter, limit: $limit, nextToken: $nextToken) {\n    __typename\n    items {\n      __typename\n      date\n      doctorId\n      doctorName\n      id\n      note\n      ownerId\n      ownerName\n      status\n    }\n    nextToken\n  }\n}"
+    "query ListAppointments($filter: TableAppointmentFilterInput, $limit: Int, $nextToken: String) {\n  listAppointments(filter: $filter, limit: $limit, nextToken: $nextToken) {\n    __typename\n    items {\n      __typename\n      date\n      doctorId\n      doctorName\n      doctorSpecialty\n      hospitalLocation\n      hospitalName\n      id\n      note\n      ownerId\n      ownerName\n      status\n    }\n    nextToken\n  }\n}"
 
   public var filter: TableAppointmentFilterInput?
   public var limit: Int?
@@ -4198,6 +4403,9 @@ public final class ListAppointmentsQuery: GraphQLQuery {
           GraphQLField("date", type: .nonNull(.scalar(String.self))),
           GraphQLField("doctorId", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("doctorName", type: .nonNull(.scalar(String.self))),
+          GraphQLField("doctorSpecialty", type: .nonNull(.scalar(String.self))),
+          GraphQLField("hospitalLocation", type: .nonNull(.scalar(String.self))),
+          GraphQLField("hospitalName", type: .nonNull(.scalar(String.self))),
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("note", type: .nonNull(.scalar(String.self))),
           GraphQLField("ownerId", type: .nonNull(.scalar(GraphQLID.self))),
@@ -4211,8 +4419,8 @@ public final class ListAppointmentsQuery: GraphQLQuery {
           self.snapshot = snapshot
         }
 
-        public init(date: String, doctorId: GraphQLID, doctorName: String, id: GraphQLID, note: String, ownerId: GraphQLID, ownerName: String, status: String) {
-          self.init(snapshot: ["__typename": "Appointment", "date": date, "doctorId": doctorId, "doctorName": doctorName, "id": id, "note": note, "ownerId": ownerId, "ownerName": ownerName, "status": status])
+        public init(date: String, doctorId: GraphQLID, doctorName: String, doctorSpecialty: String, hospitalLocation: String, hospitalName: String, id: GraphQLID, note: String, ownerId: GraphQLID, ownerName: String, status: String) {
+          self.init(snapshot: ["__typename": "Appointment", "date": date, "doctorId": doctorId, "doctorName": doctorName, "doctorSpecialty": doctorSpecialty, "hospitalLocation": hospitalLocation, "hospitalName": hospitalName, "id": id, "note": note, "ownerId": ownerId, "ownerName": ownerName, "status": status])
         }
 
         public var __typename: String {
@@ -4248,6 +4456,33 @@ public final class ListAppointmentsQuery: GraphQLQuery {
           }
           set {
             snapshot.updateValue(newValue, forKey: "doctorName")
+          }
+        }
+
+        public var doctorSpecialty: String {
+          get {
+            return snapshot["doctorSpecialty"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "doctorSpecialty")
+          }
+        }
+
+        public var hospitalLocation: String {
+          get {
+            return snapshot["hospitalLocation"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "hospitalLocation")
+          }
+        }
+
+        public var hospitalName: String {
+          get {
+            return snapshot["hospitalName"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "hospitalName")
           }
         }
 
@@ -4462,7 +4697,7 @@ public final class ListDoctorsQuery: GraphQLQuery {
 
 public final class ListHealthInfosQuery: GraphQLQuery {
   public static let operationString =
-    "query ListHealthInfos($filter: TableHealthInfoFilterInput, $limit: Int, $nextToken: String) {\n  listHealthInfos(filter: $filter, limit: $limit, nextToken: $nextToken) {\n    __typename\n    items {\n      __typename\n      age\n      height\n      id\n      sex\n      system\n      weight\n    }\n    nextToken\n  }\n}"
+    "query ListHealthInfos($filter: TableHealthInfoFilterInput, $limit: Int, $nextToken: String) {\n  listHealthInfos(filter: $filter, limit: $limit, nextToken: $nextToken) {\n    __typename\n    items {\n      __typename\n      age\n      bloodType\n      height\n      id\n      sex\n      system\n      weight\n    }\n    nextToken\n  }\n}"
 
   public var filter: TableHealthInfoFilterInput?
   public var limit: Int?
@@ -4556,6 +4791,7 @@ public final class ListHealthInfosQuery: GraphQLQuery {
         public static let selections: [GraphQLSelection] = [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
           GraphQLField("age", type: .nonNull(.scalar(Int.self))),
+          GraphQLField("bloodType", type: .nonNull(.scalar(String.self))),
           GraphQLField("height", type: .nonNull(.scalar(Double.self))),
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
           GraphQLField("sex", type: .nonNull(.scalar(String.self))),
@@ -4569,8 +4805,8 @@ public final class ListHealthInfosQuery: GraphQLQuery {
           self.snapshot = snapshot
         }
 
-        public init(age: Int, height: Double, id: GraphQLID, sex: String, system: String, weight: Double) {
-          self.init(snapshot: ["__typename": "HealthInfo", "age": age, "height": height, "id": id, "sex": sex, "system": system, "weight": weight])
+        public init(age: Int, bloodType: String, height: Double, id: GraphQLID, sex: String, system: String, weight: Double) {
+          self.init(snapshot: ["__typename": "HealthInfo", "age": age, "bloodType": bloodType, "height": height, "id": id, "sex": sex, "system": system, "weight": weight])
         }
 
         public var __typename: String {
@@ -4588,6 +4824,15 @@ public final class ListHealthInfosQuery: GraphQLQuery {
           }
           set {
             snapshot.updateValue(newValue, forKey: "age")
+          }
+        }
+
+        public var bloodType: String {
+          get {
+            return snapshot["bloodType"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "bloodType")
           }
         }
 
@@ -5122,7 +5367,7 @@ public final class ListUsersQuery: GraphQLQuery {
 
 public final class OnCreateAppointmentSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnCreateAppointment($doctorId: ID, $doctorName: String, $id: ID, $ownerId: ID, $ownerName: String) {\n  onCreateAppointment(doctorId: $doctorId, doctorName: $doctorName, id: $id, ownerId: $ownerId, ownerName: $ownerName) {\n    __typename\n    date\n    doctorId\n    doctorName\n    id\n    note\n    ownerId\n    ownerName\n    status\n  }\n}"
+    "subscription OnCreateAppointment($doctorId: ID, $doctorName: String, $id: ID, $ownerId: ID, $ownerName: String) {\n  onCreateAppointment(doctorId: $doctorId, doctorName: $doctorName, id: $id, ownerId: $ownerId, ownerName: $ownerName) {\n    __typename\n    date\n    doctorId\n    doctorName\n    doctorSpecialty\n    hospitalLocation\n    hospitalName\n    id\n    note\n    ownerId\n    ownerName\n    status\n  }\n}"
 
   public var doctorId: GraphQLID?
   public var doctorName: String?
@@ -5176,6 +5421,9 @@ public final class OnCreateAppointmentSubscription: GraphQLSubscription {
         GraphQLField("date", type: .nonNull(.scalar(String.self))),
         GraphQLField("doctorId", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("doctorName", type: .nonNull(.scalar(String.self))),
+        GraphQLField("doctorSpecialty", type: .nonNull(.scalar(String.self))),
+        GraphQLField("hospitalLocation", type: .nonNull(.scalar(String.self))),
+        GraphQLField("hospitalName", type: .nonNull(.scalar(String.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("note", type: .nonNull(.scalar(String.self))),
         GraphQLField("ownerId", type: .nonNull(.scalar(GraphQLID.self))),
@@ -5189,8 +5437,8 @@ public final class OnCreateAppointmentSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(date: String, doctorId: GraphQLID, doctorName: String, id: GraphQLID, note: String, ownerId: GraphQLID, ownerName: String, status: String) {
-        self.init(snapshot: ["__typename": "Appointment", "date": date, "doctorId": doctorId, "doctorName": doctorName, "id": id, "note": note, "ownerId": ownerId, "ownerName": ownerName, "status": status])
+      public init(date: String, doctorId: GraphQLID, doctorName: String, doctorSpecialty: String, hospitalLocation: String, hospitalName: String, id: GraphQLID, note: String, ownerId: GraphQLID, ownerName: String, status: String) {
+        self.init(snapshot: ["__typename": "Appointment", "date": date, "doctorId": doctorId, "doctorName": doctorName, "doctorSpecialty": doctorSpecialty, "hospitalLocation": hospitalLocation, "hospitalName": hospitalName, "id": id, "note": note, "ownerId": ownerId, "ownerName": ownerName, "status": status])
       }
 
       public var __typename: String {
@@ -5226,6 +5474,33 @@ public final class OnCreateAppointmentSubscription: GraphQLSubscription {
         }
         set {
           snapshot.updateValue(newValue, forKey: "doctorName")
+        }
+      }
+
+      public var doctorSpecialty: String {
+        get {
+          return snapshot["doctorSpecialty"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "doctorSpecialty")
+        }
+      }
+
+      public var hospitalLocation: String {
+        get {
+          return snapshot["hospitalLocation"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "hospitalLocation")
+        }
+      }
+
+      public var hospitalName: String {
+        get {
+          return snapshot["hospitalName"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "hospitalName")
         }
       }
 
@@ -5394,7 +5669,7 @@ public final class OnCreateDoctorSubscription: GraphQLSubscription {
 
 public final class OnCreateHealthInfoSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnCreateHealthInfo($age: Int, $height: Float, $id: ID, $sex: String, $weight: Float) {\n  onCreateHealthInfo(age: $age, height: $height, id: $id, sex: $sex, weight: $weight) {\n    __typename\n    age\n    height\n    id\n    sex\n    system\n    weight\n  }\n}"
+    "subscription OnCreateHealthInfo($age: Int, $height: Float, $id: ID, $sex: String, $weight: Float) {\n  onCreateHealthInfo(age: $age, height: $height, id: $id, sex: $sex, weight: $weight) {\n    __typename\n    age\n    bloodType\n    height\n    id\n    sex\n    system\n    weight\n  }\n}"
 
   public var age: Int?
   public var height: Double?
@@ -5446,6 +5721,7 @@ public final class OnCreateHealthInfoSubscription: GraphQLSubscription {
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("age", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("bloodType", type: .nonNull(.scalar(String.self))),
         GraphQLField("height", type: .nonNull(.scalar(Double.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("sex", type: .nonNull(.scalar(String.self))),
@@ -5459,8 +5735,8 @@ public final class OnCreateHealthInfoSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(age: Int, height: Double, id: GraphQLID, sex: String, system: String, weight: Double) {
-        self.init(snapshot: ["__typename": "HealthInfo", "age": age, "height": height, "id": id, "sex": sex, "system": system, "weight": weight])
+      public init(age: Int, bloodType: String, height: Double, id: GraphQLID, sex: String, system: String, weight: Double) {
+        self.init(snapshot: ["__typename": "HealthInfo", "age": age, "bloodType": bloodType, "height": height, "id": id, "sex": sex, "system": system, "weight": weight])
       }
 
       public var __typename: String {
@@ -5478,6 +5754,15 @@ public final class OnCreateHealthInfoSubscription: GraphQLSubscription {
         }
         set {
           snapshot.updateValue(newValue, forKey: "age")
+        }
+      }
+
+      public var bloodType: String {
+        get {
+          return snapshot["bloodType"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "bloodType")
         }
       }
 
@@ -5876,7 +6161,7 @@ public final class OnCreateUserSubscription: GraphQLSubscription {
 
 public final class OnDeleteAppointmentSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnDeleteAppointment($doctorId: ID, $doctorName: String, $id: ID, $ownerId: ID, $ownerName: String) {\n  onDeleteAppointment(doctorId: $doctorId, doctorName: $doctorName, id: $id, ownerId: $ownerId, ownerName: $ownerName) {\n    __typename\n    date\n    doctorId\n    doctorName\n    id\n    note\n    ownerId\n    ownerName\n    status\n  }\n}"
+    "subscription OnDeleteAppointment($doctorId: ID, $doctorName: String, $id: ID, $ownerId: ID, $ownerName: String) {\n  onDeleteAppointment(doctorId: $doctorId, doctorName: $doctorName, id: $id, ownerId: $ownerId, ownerName: $ownerName) {\n    __typename\n    date\n    doctorId\n    doctorName\n    doctorSpecialty\n    hospitalLocation\n    hospitalName\n    id\n    note\n    ownerId\n    ownerName\n    status\n  }\n}"
 
   public var doctorId: GraphQLID?
   public var doctorName: String?
@@ -5930,6 +6215,9 @@ public final class OnDeleteAppointmentSubscription: GraphQLSubscription {
         GraphQLField("date", type: .nonNull(.scalar(String.self))),
         GraphQLField("doctorId", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("doctorName", type: .nonNull(.scalar(String.self))),
+        GraphQLField("doctorSpecialty", type: .nonNull(.scalar(String.self))),
+        GraphQLField("hospitalLocation", type: .nonNull(.scalar(String.self))),
+        GraphQLField("hospitalName", type: .nonNull(.scalar(String.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("note", type: .nonNull(.scalar(String.self))),
         GraphQLField("ownerId", type: .nonNull(.scalar(GraphQLID.self))),
@@ -5943,8 +6231,8 @@ public final class OnDeleteAppointmentSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(date: String, doctorId: GraphQLID, doctorName: String, id: GraphQLID, note: String, ownerId: GraphQLID, ownerName: String, status: String) {
-        self.init(snapshot: ["__typename": "Appointment", "date": date, "doctorId": doctorId, "doctorName": doctorName, "id": id, "note": note, "ownerId": ownerId, "ownerName": ownerName, "status": status])
+      public init(date: String, doctorId: GraphQLID, doctorName: String, doctorSpecialty: String, hospitalLocation: String, hospitalName: String, id: GraphQLID, note: String, ownerId: GraphQLID, ownerName: String, status: String) {
+        self.init(snapshot: ["__typename": "Appointment", "date": date, "doctorId": doctorId, "doctorName": doctorName, "doctorSpecialty": doctorSpecialty, "hospitalLocation": hospitalLocation, "hospitalName": hospitalName, "id": id, "note": note, "ownerId": ownerId, "ownerName": ownerName, "status": status])
       }
 
       public var __typename: String {
@@ -5980,6 +6268,33 @@ public final class OnDeleteAppointmentSubscription: GraphQLSubscription {
         }
         set {
           snapshot.updateValue(newValue, forKey: "doctorName")
+        }
+      }
+
+      public var doctorSpecialty: String {
+        get {
+          return snapshot["doctorSpecialty"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "doctorSpecialty")
+        }
+      }
+
+      public var hospitalLocation: String {
+        get {
+          return snapshot["hospitalLocation"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "hospitalLocation")
+        }
+      }
+
+      public var hospitalName: String {
+        get {
+          return snapshot["hospitalName"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "hospitalName")
         }
       }
 
@@ -6148,7 +6463,7 @@ public final class OnDeleteDoctorSubscription: GraphQLSubscription {
 
 public final class OnDeleteHealthInfoSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnDeleteHealthInfo($age: Int, $height: Float, $id: ID, $sex: String, $weight: Float) {\n  onDeleteHealthInfo(age: $age, height: $height, id: $id, sex: $sex, weight: $weight) {\n    __typename\n    age\n    height\n    id\n    sex\n    system\n    weight\n  }\n}"
+    "subscription OnDeleteHealthInfo($age: Int, $height: Float, $id: ID, $sex: String, $weight: Float) {\n  onDeleteHealthInfo(age: $age, height: $height, id: $id, sex: $sex, weight: $weight) {\n    __typename\n    age\n    bloodType\n    height\n    id\n    sex\n    system\n    weight\n  }\n}"
 
   public var age: Int?
   public var height: Double?
@@ -6200,6 +6515,7 @@ public final class OnDeleteHealthInfoSubscription: GraphQLSubscription {
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("age", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("bloodType", type: .nonNull(.scalar(String.self))),
         GraphQLField("height", type: .nonNull(.scalar(Double.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("sex", type: .nonNull(.scalar(String.self))),
@@ -6213,8 +6529,8 @@ public final class OnDeleteHealthInfoSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(age: Int, height: Double, id: GraphQLID, sex: String, system: String, weight: Double) {
-        self.init(snapshot: ["__typename": "HealthInfo", "age": age, "height": height, "id": id, "sex": sex, "system": system, "weight": weight])
+      public init(age: Int, bloodType: String, height: Double, id: GraphQLID, sex: String, system: String, weight: Double) {
+        self.init(snapshot: ["__typename": "HealthInfo", "age": age, "bloodType": bloodType, "height": height, "id": id, "sex": sex, "system": system, "weight": weight])
       }
 
       public var __typename: String {
@@ -6232,6 +6548,15 @@ public final class OnDeleteHealthInfoSubscription: GraphQLSubscription {
         }
         set {
           snapshot.updateValue(newValue, forKey: "age")
+        }
+      }
+
+      public var bloodType: String {
+        get {
+          return snapshot["bloodType"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "bloodType")
         }
       }
 
@@ -6630,7 +6955,7 @@ public final class OnDeleteUserSubscription: GraphQLSubscription {
 
 public final class OnUpdateAppointmentSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnUpdateAppointment($doctorId: ID, $doctorName: String, $id: ID, $ownerId: ID, $ownerName: String) {\n  onUpdateAppointment(doctorId: $doctorId, doctorName: $doctorName, id: $id, ownerId: $ownerId, ownerName: $ownerName) {\n    __typename\n    date\n    doctorId\n    doctorName\n    id\n    note\n    ownerId\n    ownerName\n    status\n  }\n}"
+    "subscription OnUpdateAppointment($doctorId: ID, $doctorName: String, $id: ID, $ownerId: ID, $ownerName: String) {\n  onUpdateAppointment(doctorId: $doctorId, doctorName: $doctorName, id: $id, ownerId: $ownerId, ownerName: $ownerName) {\n    __typename\n    date\n    doctorId\n    doctorName\n    doctorSpecialty\n    hospitalLocation\n    hospitalName\n    id\n    note\n    ownerId\n    ownerName\n    status\n  }\n}"
 
   public var doctorId: GraphQLID?
   public var doctorName: String?
@@ -6684,6 +7009,9 @@ public final class OnUpdateAppointmentSubscription: GraphQLSubscription {
         GraphQLField("date", type: .nonNull(.scalar(String.self))),
         GraphQLField("doctorId", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("doctorName", type: .nonNull(.scalar(String.self))),
+        GraphQLField("doctorSpecialty", type: .nonNull(.scalar(String.self))),
+        GraphQLField("hospitalLocation", type: .nonNull(.scalar(String.self))),
+        GraphQLField("hospitalName", type: .nonNull(.scalar(String.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("note", type: .nonNull(.scalar(String.self))),
         GraphQLField("ownerId", type: .nonNull(.scalar(GraphQLID.self))),
@@ -6697,8 +7025,8 @@ public final class OnUpdateAppointmentSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(date: String, doctorId: GraphQLID, doctorName: String, id: GraphQLID, note: String, ownerId: GraphQLID, ownerName: String, status: String) {
-        self.init(snapshot: ["__typename": "Appointment", "date": date, "doctorId": doctorId, "doctorName": doctorName, "id": id, "note": note, "ownerId": ownerId, "ownerName": ownerName, "status": status])
+      public init(date: String, doctorId: GraphQLID, doctorName: String, doctorSpecialty: String, hospitalLocation: String, hospitalName: String, id: GraphQLID, note: String, ownerId: GraphQLID, ownerName: String, status: String) {
+        self.init(snapshot: ["__typename": "Appointment", "date": date, "doctorId": doctorId, "doctorName": doctorName, "doctorSpecialty": doctorSpecialty, "hospitalLocation": hospitalLocation, "hospitalName": hospitalName, "id": id, "note": note, "ownerId": ownerId, "ownerName": ownerName, "status": status])
       }
 
       public var __typename: String {
@@ -6734,6 +7062,33 @@ public final class OnUpdateAppointmentSubscription: GraphQLSubscription {
         }
         set {
           snapshot.updateValue(newValue, forKey: "doctorName")
+        }
+      }
+
+      public var doctorSpecialty: String {
+        get {
+          return snapshot["doctorSpecialty"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "doctorSpecialty")
+        }
+      }
+
+      public var hospitalLocation: String {
+        get {
+          return snapshot["hospitalLocation"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "hospitalLocation")
+        }
+      }
+
+      public var hospitalName: String {
+        get {
+          return snapshot["hospitalName"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "hospitalName")
         }
       }
 
@@ -6902,7 +7257,7 @@ public final class OnUpdateDoctorSubscription: GraphQLSubscription {
 
 public final class OnUpdateHealthInfoSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnUpdateHealthInfo($age: Int, $height: Float, $id: ID, $sex: String, $weight: Float) {\n  onUpdateHealthInfo(age: $age, height: $height, id: $id, sex: $sex, weight: $weight) {\n    __typename\n    age\n    height\n    id\n    sex\n    system\n    weight\n  }\n}"
+    "subscription OnUpdateHealthInfo($age: Int, $height: Float, $id: ID, $sex: String, $weight: Float) {\n  onUpdateHealthInfo(age: $age, height: $height, id: $id, sex: $sex, weight: $weight) {\n    __typename\n    age\n    bloodType\n    height\n    id\n    sex\n    system\n    weight\n  }\n}"
 
   public var age: Int?
   public var height: Double?
@@ -6954,6 +7309,7 @@ public final class OnUpdateHealthInfoSubscription: GraphQLSubscription {
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("age", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("bloodType", type: .nonNull(.scalar(String.self))),
         GraphQLField("height", type: .nonNull(.scalar(Double.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
         GraphQLField("sex", type: .nonNull(.scalar(String.self))),
@@ -6967,8 +7323,8 @@ public final class OnUpdateHealthInfoSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(age: Int, height: Double, id: GraphQLID, sex: String, system: String, weight: Double) {
-        self.init(snapshot: ["__typename": "HealthInfo", "age": age, "height": height, "id": id, "sex": sex, "system": system, "weight": weight])
+      public init(age: Int, bloodType: String, height: Double, id: GraphQLID, sex: String, system: String, weight: Double) {
+        self.init(snapshot: ["__typename": "HealthInfo", "age": age, "bloodType": bloodType, "height": height, "id": id, "sex": sex, "system": system, "weight": weight])
       }
 
       public var __typename: String {
@@ -6986,6 +7342,15 @@ public final class OnUpdateHealthInfoSubscription: GraphQLSubscription {
         }
         set {
           snapshot.updateValue(newValue, forKey: "age")
+        }
+      }
+
+      public var bloodType: String {
+        get {
+          return snapshot["bloodType"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "bloodType")
         }
       }
 

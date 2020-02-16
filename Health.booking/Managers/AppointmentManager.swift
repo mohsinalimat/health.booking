@@ -11,6 +11,7 @@ class AppointmentManager {
     var client = AWSClient.shared
     
 }
+
 // MARK: - Public
 extension AppointmentManager {
     
@@ -20,7 +21,7 @@ extension AppointmentManager {
             case .success(let appointmentsData):
                 guard let appointments = appointmentsData.listAppointments?.items?
                     .compactMap({ $0 }) else {
-                    return
+                        return
                 }
                 
                 let list = appointments.map({ Appointment(query: $0) })

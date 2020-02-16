@@ -4,6 +4,9 @@ mutation CreateAppointment($input: CreateAppointmentInput!) {
     date
     doctorId
     doctorName
+    doctorSpecialty
+    hospitalLocation
+    hospitalName
     id
     note
     ownerId
@@ -22,6 +25,7 @@ mutation CreateDoctor($input: CreateDoctorInput!) {
 mutation CreateHealthInfo($input: CreateHealthInfoInput!) {
   createHealthInfo(input: $input) {
     age
+    bloodType
     height
     id
     sex
@@ -58,6 +62,9 @@ mutation DeleteAppointment($input: DeleteAppointmentInput!) {
     date
     doctorId
     doctorName
+    doctorSpecialty
+    hospitalLocation
+    hospitalName
     id
     note
     ownerId
@@ -76,6 +83,7 @@ mutation DeleteDoctor($input: DeleteDoctorInput!) {
 mutation DeleteHealthInfo($input: DeleteHealthInfoInput!) {
   deleteHealthInfo(input: $input) {
     age
+    bloodType
     height
     id
     sex
@@ -112,6 +120,9 @@ mutation UpdateAppointment($input: UpdateAppointmentInput!) {
     date
     doctorId
     doctorName
+    doctorSpecialty
+    hospitalLocation
+    hospitalName
     id
     note
     ownerId
@@ -130,6 +141,7 @@ mutation UpdateDoctor($input: UpdateDoctorInput!) {
 mutation UpdateHealthInfo($input: UpdateHealthInfoInput!) {
   updateHealthInfo(input: $input) {
     age
+    bloodType
     height
     id
     sex
