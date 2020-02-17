@@ -18,6 +18,13 @@ struct Doctor {
         self.specialty = query.specialty
         self.hospitalId = query.hospitalId
     }
+    
+    init(listQuery: ListDoctorsQuery.Data.ListDoctor.Item) {
+        self.id = listQuery.id
+        self.name = listQuery.name
+        self.specialty = listQuery.specialty
+        self.hospitalId = listQuery.hospitalId
+    }
 }
 
 struct Hospital {
@@ -31,5 +38,12 @@ struct Hospital {
         self.name = query.name
         self.location = query.location
         self.coordinates = query.coordinates
+    }
+    
+    init(listQuery: ListHospitalsQuery.Data.ListHospital.Item) {
+        self.id = listQuery.id
+        self.name = listQuery.name
+        self.location = listQuery.location
+        self.coordinates = listQuery.coordinates
     }
 }

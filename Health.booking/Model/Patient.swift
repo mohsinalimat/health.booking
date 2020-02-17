@@ -21,6 +21,10 @@ struct Patient {
         self.lastName = query.lastName
         self.healthId = query.healthId
     }
+    
+    var fullName: String {
+        firstName + " " + lastName
+    }
 }
 
 struct HealthInfo {

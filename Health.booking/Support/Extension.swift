@@ -194,6 +194,42 @@ extension UITextField {
         picker.showsSelectionIndicator = true
         self.inputView = picker
     }
+    
+    func setDatePickerInputView() {
+        let pickerView = UIDatePicker()
+        pickerView.datePickerMode = .dateAndTime
+        pickerView.minimumDate = Date()
+        self.inputView = pickerView
+    }
+}
+
+extension UITextView {
+    func setToolbarAccessoryView(buttonTitle: String,
+                                 target: Any,
+                                 action: Selector) {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        var items: [UIBarButtonItem] = []
+        
+        let doneButton = UIBarButtonItem(title: buttonTitle,
+                                         style: .done,
+                                         target: target,
+                                         action: action)
+        doneButton.tintColor = .systemBlue
+        
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
+                                          target: nil,
+                                          action: nil)
+        
+        items.append(contentsOf: [spaceButton, doneButton])
+        
+        toolbar.items = items
+        toolbar.isUserInteractionEnabled = true
+        toolbar.isTranslucent = true
+        // Set toolbar
+        self.inputAccessoryView = toolbar
+    }
 }
 
 // MARK: - UIViewController

@@ -53,3 +53,16 @@ struct Appointment {
     }
 }
 
+struct AppointmentHolder {
+    var ownerId: String?
+    var ownerName: String?
+    var doctorId: String?
+    var doctorName: String?
+    var doctorSpecialty: String?
+    var hospitalName: String?
+    var hospitalLocation: String?
+    var date: String?
+    var time: String?
+    var status: Appointment.Status?
+    var note: String?
+}

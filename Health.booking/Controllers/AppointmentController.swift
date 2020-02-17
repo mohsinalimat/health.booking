@@ -8,21 +8,39 @@ import UIKit
 
 class AppointmentController: UIViewController {
     
+    // - IBOutlet
     @IBOutlet weak var tableView: UITableView!
     
-    fileprivate lazy var manager = AppointmentManager()
-    fileprivate var appointments = [Appointment]()
+    // - Manager
+    private var manager = GeneralManager.shared
+    
+    // - Data Source
+    var appointments: [Appointment] {
+        manager.appointments ?? []
+    }
+    
+    // - Refresh Controller
+    private lazy var refreshController = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-        manager.getAll { (app) in
-            guard let list = app else { return }
-            self.appointments = list
+        tableView.refreshControl = refreshController
+        
+        refreshController.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshController.addTarget(self,
+                             action: #selector(onRefresh),
+                             for: .valueChanged)
+        
+        manager.getAll { _ in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
+        
+        // - Side load other data 
+        manager.getAllDoctors()
+        manager.getAllHospitals()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -30,6 +48,15 @@ class AppointmentController: UIViewController {
             return
         }
         dvc.appointment = sender as? Appointment
+    }
+    
+    @objc private func onRefresh(_ sender: Any) {
+        manager.getAll { _ in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.refreshController.endRefreshing()
+            }
+        }
     }
 }
 
