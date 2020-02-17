@@ -44,6 +44,10 @@ class AuthController: UIViewController {
         dvc.key = key
         dvc.kind = userKind
     }
+    
+    @IBAction func onCancel(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
 }
 
 // MARK: - Methods

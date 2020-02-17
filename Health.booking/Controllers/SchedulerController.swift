@@ -40,6 +40,12 @@ class SchedulerController: UIViewController {
             }
         }
     }
+    
+    @IBAction func onLogout(_ sender: Any) {
+        manager.deintegrate()
+        profile.deintegrate()
+        performSegue(withIdentifier: "DoctorLogutSegue", sender: nil)
+    }
 }
 
 // MARK: - UITableViewDataSource

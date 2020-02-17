@@ -56,5 +56,9 @@ class AppointmentDetailController: UIViewController {
             }
         }
     }
+    
+    @IBAction func onExit(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 

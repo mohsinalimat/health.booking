@@ -22,26 +22,6 @@ class GeneralManager {
 // MARK: - Public
 extension GeneralManager {
     
-    func getAllAppointments(completion: (([Appointment]?) -> Void)? = nil) {
-        client.query(ListAppointmentsQuery()) { (result) in
-            switch result {
-            case .success(let appointmentsData):
-                guard let appointments = appointmentsData.listAppointments?.items?
-                    .compactMap({ $0 }) else {
-                        return
-                }
-                
-                let list = appointments.map({ Appointment(query: $0) })
-                self.appointments = list
-                completion?(list)
-            case .failure(let error):
-                print("Error while getting all appointments")
-                print(error.localizedDescription)
-                completion?(nil)
-            }
-        }
-    }
-    
     func getAllAppointments(forPatient id: String?, completion: (([Appointment]?) -> Void)? = nil) {
         var appointmentFilter = TableAppointmentFilterInput()
         var idFilter = TableIDFilterInput()
@@ -146,5 +126,11 @@ extension GeneralManager {
             filteredData.append(filtered)
         }
         return filteredData
+    }
+    
+    func deintegrate() {
+        self.appointments = nil
+        self.doctors = nil
+        self.hospitals = nil
     }
 }

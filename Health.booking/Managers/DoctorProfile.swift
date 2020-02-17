@@ -14,4 +14,10 @@ class DoctorProfile {
     
     static let current = DoctorProfile()
     private init() { }
+    
+    func deintegrate() {
+        self.key = nil
+        self.data = nil
+        self.hospital = nil
+    }
 }

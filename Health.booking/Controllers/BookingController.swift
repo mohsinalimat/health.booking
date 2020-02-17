@@ -19,7 +19,7 @@ class BookingController: UIViewController {
     
     // - Fields
     private var generalManager = GeneralManager.shared
-    private var manager = BookingManager.default
+    private var manager = BookingManager()
     private var constraintOffset: CGFloat = 32
     
     // - Delegate

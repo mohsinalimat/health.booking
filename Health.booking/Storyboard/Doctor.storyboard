@@ -34,10 +34,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EAC-VT-amW"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Scheduler" largeTitleDisplayMode="always" id="A3h-lV-SUa"/>
+                    <navigationItem key="navigationItem" title="Scheduler" largeTitleDisplayMode="always" id="A3h-lV-SUa">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="4ng-w3-Nlg">
+                            <connections>
+                                <action selector="onLogout:" destination="ZRu-ck-bgG" id="8cj-Oe-SW4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Fiq-Th-Vqa" id="tTH-fI-Ppo"/>
                         <segue destination="f01-Ti-XIm" kind="show" identifier="ShowScheduledAppointment" id="CwU-gm-2X3"/>
+                        <segue destination="w1n-ad-wQz" kind="showDetail" identifier="DoctorLogutSegue" id="GjA-DG-kFq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gj8-BL-9vw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -310,6 +317,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cOE-wD-pBz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2571.0144927536235" y="-106.47321428571428"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="p9e-Ub-FWP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="w1n-ad-wQz" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="PB1-Hs-O3n"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B6f-JY-yV8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2243" y="-576"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pab-w3-m11">

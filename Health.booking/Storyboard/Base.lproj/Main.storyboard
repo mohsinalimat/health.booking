@@ -11,7 +11,7 @@
         <!--Onboarding Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="OnboardingController" customModule="Health_booking" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="OnboardingController" customModule="Health_booking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -185,37 +185,53 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cG0-Hv-2ua">
-                                <rect key="frame" x="100" y="716" width="214" height="60"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="oBf-QY-EFv">
+                                <rect key="frame" x="32" y="678" width="350" height="98"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cG0-Hv-2ua">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="60"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Rbs-SG-Oxn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginAction:" destination="iKk-sb-AHg" eventType="touchUpInside" id="9dH-zQ-q5c"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JuF-Vz-GMl">
+                                        <rect key="frame" x="150.5" y="68" width="49" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="onCancel:" destination="iKk-sb-AHg" eventType="touchUpInside" id="orF-Rh-fBo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Rbs-SG-Oxn"/>
+                                    <constraint firstItem="cG0-Hv-2ua" firstAttribute="width" secondItem="oBf-QY-EFv" secondAttribute="width" id="Wvo-by-Sf5"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="30"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="loginAction:" destination="iKk-sb-AHg" eventType="touchUpInside" id="9dH-zQ-q5c"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="L3U-sh-urw" firstAttribute="trailing" secondItem="oBf-QY-EFv" secondAttribute="trailing" constant="32" id="2Ko-FR-GHA"/>
+                            <constraint firstItem="oBf-QY-EFv" firstAttribute="leading" secondItem="L3U-sh-urw" secondAttribute="leading" constant="32" id="5uc-FT-Azs"/>
                             <constraint firstItem="36m-y2-917" firstAttribute="leading" secondItem="L3U-sh-urw" secondAttribute="leading" constant="64" id="7Z9-36-Kfr"/>
                             <constraint firstItem="36m-y2-917" firstAttribute="centerY" secondItem="Lev-PU-ie4" secondAttribute="centerY" constant="-30" id="Cdo-kl-U02"/>
-                            <constraint firstItem="cG0-Hv-2ua" firstAttribute="leading" secondItem="L3U-sh-urw" secondAttribute="leading" constant="100" id="Qxo-Mm-fb0"/>
-                            <constraint firstItem="L3U-sh-urw" firstAttribute="trailing" secondItem="cG0-Hv-2ua" secondAttribute="trailing" constant="100" id="Sx0-AR-fXd"/>
                             <constraint firstItem="L3U-sh-urw" firstAttribute="trailing" secondItem="36m-y2-917" secondAttribute="trailing" constant="64" id="XvG-Em-eil"/>
-                            <constraint firstItem="L3U-sh-urw" firstAttribute="bottom" secondItem="cG0-Hv-2ua" secondAttribute="bottom" constant="32" id="m42-ab-MrB"/>
                             <constraint firstItem="36m-y2-917" firstAttribute="centerX" secondItem="Lev-PU-ie4" secondAttribute="centerX" id="mFE-2w-Hnk"/>
                             <constraint firstItem="L3U-sh-urw" firstAttribute="trailing" secondItem="MoP-XW-jKw" secondAttribute="trailing" constant="16" id="mPC-B8-zlj"/>
                             <constraint firstItem="MoP-XW-jKw" firstAttribute="top" secondItem="L3U-sh-urw" secondAttribute="top" constant="32" id="vr5-ch-zmQ"/>
+                            <constraint firstItem="L3U-sh-urw" firstAttribute="bottom" secondItem="oBf-QY-EFv" secondAttribute="bottom" constant="32" id="wwu-op-k1q"/>
                             <constraint firstItem="MoP-XW-jKw" firstAttribute="leading" secondItem="L3U-sh-urw" secondAttribute="leading" constant="16" id="xUE-Nw-q4M"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="L3U-sh-urw"/>

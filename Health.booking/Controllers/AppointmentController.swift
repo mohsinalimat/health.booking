@@ -59,6 +59,12 @@ class AppointmentController: UIViewController {
             }
         }
     }
+    
+    @IBAction func onLogut(_ sender: Any) {
+        manager.deintegrate()
+        patientProfile.deintegrate()
+        performSegue(withIdentifier: "PatientLogutSegue", sender: nil)
+    }
 }
 
 // MARK: - UITableViewDataSource

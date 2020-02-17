@@ -9,10 +9,6 @@ import Foundation
 
 class BookingManager {
     
-    static let `default` = BookingManager()
-    private init() { }
-    
-    // - Fields
     var appointment = CreateAppointmentInput(date: "",
                                              doctorId: "",
                                              doctorName: "",
