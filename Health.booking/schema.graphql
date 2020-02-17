@@ -216,7 +216,7 @@ input DeleteUserInput {
 }
 
 input TableAppointmentFilterInput {
-  date: String!
+  date: String
   doctorId: TableIDFilterInput
   doctorName: TableStringFilterInput
   id: TableIDFilterInput

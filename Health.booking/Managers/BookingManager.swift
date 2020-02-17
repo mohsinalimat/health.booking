@@ -54,7 +54,7 @@ extension BookingManager {
             else { completion("Request not possible for user"); return }
         appointment.ownerId = currentPatient.id
         appointment.ownerName = currentPatient.fullName
-        appointment.status = Appointment.Status.upcoming.rawValue
+        appointment.status = Appointment.Status.pending.rawValue
         appointment.healthId = currentPatient.healthId
         
         let mutation = CreateAppointmentMutation(input: appointment)

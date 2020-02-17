@@ -717,13 +717,13 @@ public struct UpdatePatientUserInput: GraphQLMapConvertible {
 public struct TableAppointmentFilterInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(date: String, doctorId: TableIDFilterInput? = nil, doctorName: TableStringFilterInput? = nil, id: TableIDFilterInput? = nil, note: TableStringFilterInput? = nil, ownerId: TableIDFilterInput? = nil, ownerName: TableStringFilterInput? = nil, status: TableStringFilterInput? = nil) {
+  public init(date: String? = nil, doctorId: TableIDFilterInput? = nil, doctorName: TableStringFilterInput? = nil, id: TableIDFilterInput? = nil, note: TableStringFilterInput? = nil, ownerId: TableIDFilterInput? = nil, ownerName: TableStringFilterInput? = nil, status: TableStringFilterInput? = nil) {
     graphQLMap = ["date": date, "doctorId": doctorId, "doctorName": doctorName, "id": id, "note": note, "ownerId": ownerId, "ownerName": ownerName, "status": status]
   }
 
-  public var date: String {
+  public var date: String? {
     get {
-      return graphQLMap["date"] as! String
+      return graphQLMap["date"] as! String?
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "date")

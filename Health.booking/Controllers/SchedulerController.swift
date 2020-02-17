@@ -14,13 +14,14 @@ class SchedulerController: UIViewController {
     // - Data
     private var refreshController: UIRefreshControl?
     private var manager = GeneralManager.shared
+    private var profile = DoctorProfile.current
     private var dataSource: [[Appointment]] {
         manager.appointmetsByStatus()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        manager.getAll { (_) in
+        manager.getAllAppointments(for: profile.data!.id) { (_) in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -31,10 +32,9 @@ class SchedulerController: UIViewController {
     }
     
     @objc private func onRefresh(_ sender: Any) {
-        manager.getAll { (_) in
+        manager.getAllAppointments(for: profile.data!.id) { (_) in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
-                self.refreshController?.endRefreshing()
             }
         }
     }

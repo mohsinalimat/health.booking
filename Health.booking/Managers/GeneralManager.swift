@@ -22,8 +22,35 @@ class GeneralManager {
 // MARK: - Public
 extension GeneralManager {
     
-    func getAll(completion: (([Appointment]?) -> Void)? = nil) {
+    func getAllAppointments(completion: (([Appointment]?) -> Void)? = nil) {
         client.query(ListAppointmentsQuery()) { (result) in
+            switch result {
+            case .success(let appointmentsData):
+                guard let appointments = appointmentsData.listAppointments?.items?
+                    .compactMap({ $0 }) else {
+                        return
+                }
+                
+                let list = appointments.map({ Appointment(query: $0) })
+                self.appointments = list
+                completion?(list)
+            case .failure(let error):
+                print("Error while getting all appointments")
+                print(error.localizedDescription)
+                completion?(nil)
+            }
+        }
+    }
+    
+    func getAllAppointments(for userId: String?, completion: (([Appointment]?) -> Void)? = nil) {
+        // Filter by ID
+        var appointmentFilter = TableAppointmentFilterInput()
+        var idFilter = TableIDFilterInput()
+        idFilter.eq = userId
+        appointmentFilter.doctorId = idFilter
+        let appointmentQuery = ListAppointmentsQuery(filter: appointmentFilter,
+                                                     limit: nil, nextToken: nil)
+        client.query(appointmentQuery) { (result) in
             switch result {
             case .success(let appointmentsData):
                 guard let appointments = appointmentsData.listAppointments?.items?
@@ -50,7 +77,6 @@ extension GeneralManager {
                     .compactMap({ $0 }) else {
                         return
                 }
-                
                 let list = doctors.map({ Doctor(listQuery: $0) })
                 self.doctors = list
                 completion?(list)

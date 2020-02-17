@@ -12,7 +12,7 @@ class SchedulePreviewController: UIViewController {
     // Header
 //    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var acceptButton: UIButton!
+    @IBOutlet weak var acceptButton: UIBarButtonItem!
     // When
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!

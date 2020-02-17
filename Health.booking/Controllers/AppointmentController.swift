@@ -32,7 +32,7 @@ class AppointmentController: UIViewController {
                              action: #selector(onRefresh),
                              for: .valueChanged)
         
-        manager.getAll { _ in
+        manager.getAllAppointments { _ in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -51,7 +51,7 @@ class AppointmentController: UIViewController {
     }
     
     @objc private func onRefresh(_ sender: Any) {
-        manager.getAll { _ in
+        manager.getAllAppointments { _ in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.refreshController.endRefreshing()

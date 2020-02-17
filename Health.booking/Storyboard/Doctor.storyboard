@@ -287,22 +287,14 @@
                         <viewLayoutGuide key="safeArea" id="3NO-Im-bKx"/>
                     </view>
                     <navigationItem key="navigationItem" title="Patient" largeTitleDisplayMode="always" id="Efh-7R-79w">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="wuh-9l-Guc">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qTk-T4-tCi">
-                                <rect key="frame" x="334" y="7" width="60" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="NB0-nY-hnb"/>
-                                </constraints>
-                                <state key="normal" title="Accept"/>
-                                <connections>
-                                    <action selector="onAccept:" destination="f01-Ti-XIm" eventType="touchUpInside" id="yeD-Vj-orX"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" title="Accept" id="bln-Bq-Va9">
+                            <connections>
+                                <action selector="onAccept:" destination="f01-Ti-XIm" id="TOd-eg-Unz"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="acceptButton" destination="qTk-T4-tCi" id="TFX-OZ-5QC"/>
+                        <outlet property="acceptButton" destination="bln-Bq-Va9" id="XBy-c4-Jl3"/>
                         <outlet property="ageLabel" destination="YkY-Bg-m1G" id="ogi-s5-H0z"/>
                         <outlet property="bloodTypeLabel" destination="ZYd-6e-gXo" id="bgg-8K-FIJ"/>
                         <outlet property="dateLabel" destination="O0m-nx-7qy" id="K1z-ng-sBJ"/>
