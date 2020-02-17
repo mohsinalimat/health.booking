@@ -13,6 +13,7 @@ class AppointmentController: UIViewController {
     
     // - Manager
     private var manager = GeneralManager.shared
+    private var patientProfile = PatientProfile.current
     
     // - Data Source
     var appointments: [Appointment] {
@@ -29,10 +30,10 @@ class AppointmentController: UIViewController {
         
         refreshController.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshController.addTarget(self,
-                             action: #selector(onRefresh),
-                             for: .valueChanged)
+                                    action: #selector(onRefresh),
+                                    for: .valueChanged)
         
-        manager.getAllAppointments { _ in
+        manager.getAllAppointments(forPatient: patientProfile.data?.id) { _ in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -51,7 +52,7 @@ class AppointmentController: UIViewController {
     }
     
     @objc private func onRefresh(_ sender: Any) {
-        manager.getAllAppointments { _ in
+        manager.getAllAppointments(forPatient: patientProfile.data?.id) { _ in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.refreshController.endRefreshing()

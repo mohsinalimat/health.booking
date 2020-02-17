@@ -21,7 +21,7 @@ class SchedulerController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        manager.getAllAppointments(for: profile.data!.id) { (_) in
+        manager.getAllAppointments(forDoctor: profile.data!.id) { (_) in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -29,12 +29,14 @@ class SchedulerController: UIViewController {
         tableView.tableFooterView = UIView()
         refreshController = UIRefreshControl()
         refreshController?.addTarget(self, action: #selector(onRefresh), for: .valueChanged)
+        tableView.refreshControl = refreshController
     }
     
     @objc private func onRefresh(_ sender: Any) {
-        manager.getAllAppointments(for: profile.data!.id) { (_) in
+        manager.getAllAppointments(forDoctor: profile.data!.id) { (_) in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.refreshController?.endRefreshing()
             }
         }
     }

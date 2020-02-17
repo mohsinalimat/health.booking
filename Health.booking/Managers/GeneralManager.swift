@@ -42,11 +42,37 @@ extension GeneralManager {
         }
     }
     
-    func getAllAppointments(for userId: String?, completion: (([Appointment]?) -> Void)? = nil) {
+    func getAllAppointments(forPatient id: String?, completion: (([Appointment]?) -> Void)? = nil) {
+        var appointmentFilter = TableAppointmentFilterInput()
+        var idFilter = TableIDFilterInput()
+        idFilter.eq = id
+        appointmentFilter.ownerId = idFilter
+        let appointmentQuery = ListAppointmentsQuery(filter: appointmentFilter,
+                                                     limit: nil, nextToken: nil)
+        client.query(appointmentQuery) { (result) in
+            switch result {
+            case .success(let appointmentsData):
+                guard let appointments = appointmentsData.listAppointments?.items?
+                    .compactMap({ $0 }) else {
+                        return
+                }
+                
+                let list = appointments.map({ Appointment(query: $0) })
+                self.appointments = list
+                completion?(list)
+            case .failure(let error):
+                print("Error while getting all appointments")
+                print(error.localizedDescription)
+                completion?(nil)
+            }
+        }
+    }
+    
+    func getAllAppointments(forDoctor id: String?, completion: (([Appointment]?) -> Void)? = nil) {
         // Filter by ID
         var appointmentFilter = TableAppointmentFilterInput()
         var idFilter = TableIDFilterInput()
-        idFilter.eq = userId
+        idFilter.eq = id
         appointmentFilter.doctorId = idFilter
         let appointmentQuery = ListAppointmentsQuery(filter: appointmentFilter,
                                                      limit: nil, nextToken: nil)
