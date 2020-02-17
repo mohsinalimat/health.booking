@@ -519,9 +519,12 @@
                                             <constraint firstAttribute="height" constant="50" id="nHW-pA-ZVV"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                        <state key="normal" title="Cancel">
+                                        <state key="normal" title="Abort">
                                             <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onAbort:" destination="1BD-g9-13O" eventType="touchUpInside" id="HCo-T1-JKP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -643,6 +646,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="RQb-il-LB5"/>
                     <connections>
+                        <outlet property="abortButton" destination="Va3-Gq-mW9" id="xRu-I2-J6j"/>
                         <outlet property="cancelButton" destination="Va3-Gq-mW9" id="sNX-5x-FzV"/>
                         <outlet property="dateLabel" destination="Pte-Y8-iSD" id="UGk-p1-AgI"/>
                         <outlet property="hospitalLocationLabel" destination="GI5-Aa-rM2" id="lLA-Zq-kM3"/>

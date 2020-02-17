@@ -5,6 +5,7 @@ mutation CreateAppointment($input: CreateAppointmentInput!) {
     doctorId
     doctorName
     doctorSpecialty
+    healthId
     hospitalLocation
     hospitalName
     id
@@ -63,6 +64,7 @@ mutation DeleteAppointment($input: DeleteAppointmentInput!) {
     doctorId
     doctorName
     doctorSpecialty
+    healthId
     hospitalLocation
     hospitalName
     id
@@ -121,6 +123,7 @@ mutation UpdateAppointment($input: UpdateAppointmentInput!) {
     doctorId
     doctorName
     doctorSpecialty
+    healthId
     hospitalLocation
     hospitalName
     id

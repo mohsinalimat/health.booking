@@ -17,6 +17,7 @@ subscription OnCreateAppointment(
     doctorId
     doctorName
     doctorSpecialty
+    healthId
     hospitalLocation
     hospitalName
     id
@@ -131,6 +132,7 @@ subscription OnDeleteAppointment(
     doctorId
     doctorName
     doctorSpecialty
+    healthId
     hospitalLocation
     hospitalName
     id
@@ -245,6 +247,7 @@ subscription OnUpdateAppointment(
     doctorId
     doctorName
     doctorSpecialty
+    healthId
     hospitalLocation
     hospitalName
     id

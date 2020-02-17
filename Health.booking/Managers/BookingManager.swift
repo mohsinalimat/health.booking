@@ -16,7 +16,7 @@ class BookingManager {
     var appointment = CreateAppointmentInput(date: "",
                                              doctorId: "",
                                              doctorName: "",
-                                             doctorSpecialty: "",
+                                             doctorSpecialty: "", healthId: "",
                                              hospitalLocation: "",
                                              hospitalName: "",
                                              note: "",
@@ -55,6 +55,7 @@ extension BookingManager {
         appointment.ownerId = currentPatient.id
         appointment.ownerName = currentPatient.fullName
         appointment.status = Appointment.Status.upcoming.rawValue
+        appointment.healthId = currentPatient.healthId
         
         let mutation = CreateAppointmentMutation(input: appointment)
         AWSClient.shared.mutate(mutation) { (error) in

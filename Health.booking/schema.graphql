@@ -9,6 +9,7 @@ type Appointment {
   doctorId: ID!
   doctorName: String!
   doctorSpecialty: String!
+  healthId: String!
   hospitalLocation: String!
   hospitalName: String!
   id: ID!
@@ -146,6 +147,7 @@ input CreateAppointmentInput {
   doctorId: ID!
   doctorName: String!
   doctorSpecialty: String!
+  healthId: String!
   hospitalLocation: String!
   hospitalName: String!
   note: String!
@@ -319,6 +321,7 @@ input TableUserFilterInput {
 input UpdateAppointmentInput {
   doctorId: ID
   doctorName: String
+  healthId: String
   id: ID!
   note: String
   ownerId: ID

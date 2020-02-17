@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		002BB3BC23F730EE00372553 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002BB3BB23F730EE00372553 /* Appointment.swift */; };
+		002BB3BE23F7319B00372553 /* GeneralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002BB3BD23F7319B00372553 /* GeneralManager.swift */; };
+		002BB3C023F73A6200372553 /* AppointmentDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002BB3BF23F73A6200372553 /* AppointmentDetailController.swift */; };
+		002BB3C323F8201900372553 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002BB3C223F8201900372553 /* HealthKit.framework */; };
+		002BB3C523F824E200372553 /* HealthConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002BB3C423F824E200372553 /* HealthConnect.swift */; };
+		002BB3C723F831E200372553 /* HealthDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002BB3C623F831E200372553 /* HealthDataController.swift */; };
+		002BB3C923F858E500372553 /* HealthAppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002BB3C823F858E500372553 /* HealthAppController.swift */; };
+		002BB3CB23F8A95100372553 /* HealthProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002BB3CA23F8A95100372553 /* HealthProfile.swift */; };
+		002BB3CD23F8ACA900372553 /* UIPickerHealthProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002BB3CC23F8ACA900372553 /* UIPickerHealthProtocol.swift */; };
 		0068342723F1C62A00C810E4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0068342623F1C62A00C810E4 /* Extension.swift */; };
 		0068342923F1F1F300C810E4 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0068342823F1F1F300C810E4 /* AuthController.swift */; };
 		0068342C23F1F40100C810E4 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0068342B23F1F40100C810E4 /* AuthManager.swift */; };
@@ -21,6 +30,11 @@
 		007EF61B23F5D23200B74F9A /* PatientProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007EF61A23F5D23200B74F9A /* PatientProfile.swift */; };
 		007EF61F23F5FC3E00B74F9A /* AppointmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007EF61E23F5FC3E00B74F9A /* AppointmentController.swift */; };
 		007EF62123F621E500B74F9A /* DoctorProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007EF62023F621E500B74F9A /* DoctorProfile.swift */; };
+		00A4973823F9DF8B0079D2FF /* BookingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A4973723F9DF8B0079D2FF /* BookingController.swift */; };
+		00A4973A23F9EF190079D2FF /* BookingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A4973923F9EF190079D2FF /* BookingManager.swift */; };
+		00A4D6EB23FA318000709C51 /* SchedulerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A4D6EA23FA318000709C51 /* SchedulerController.swift */; };
+		00A4D6ED23FA319B00709C51 /* SchedulePreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A4D6EC23FA319B00709C51 /* SchedulePreviewController.swift */; };
+		00D1522C23F9F6B50054DA84 /* UIPickerDoctorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1522B23F9F6B50054DA84 /* UIPickerDoctorProtocol.swift */; };
 		00D5F1C223F1A53400D2746D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D5F1C123F1A53400D2746D /* AppDelegate.swift */; };
 		00D5F1C623F1A53400D2746D /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D5F1C523F1A53400D2746D /* OnboardingController.swift */; };
 		00D5F1C923F1A53400D2746D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D5F1C723F1A53400D2746D /* Main.storyboard */; };
@@ -32,6 +46,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		002BB3BB23F730EE00372553 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
+		002BB3BD23F7319B00372553 /* GeneralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralManager.swift; sourceTree = "<group>"; };
+		002BB3BF23F73A6200372553 /* AppointmentDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentDetailController.swift; sourceTree = "<group>"; };
+		002BB3C123F8201900372553 /* Health.booking.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Health.booking.entitlements; sourceTree = "<group>"; };
+		002BB3C223F8201900372553 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		002BB3C423F824E200372553 /* HealthConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthConnect.swift; sourceTree = "<group>"; };
+		002BB3C623F831E200372553 /* HealthDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataController.swift; sourceTree = "<group>"; };
+		002BB3C823F858E500372553 /* HealthAppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthAppController.swift; sourceTree = "<group>"; };
+		002BB3CA23F8A95100372553 /* HealthProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthProfile.swift; sourceTree = "<group>"; };
+		002BB3CC23F8ACA900372553 /* UIPickerHealthProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPickerHealthProtocol.swift; sourceTree = "<group>"; };
 		0068342623F1C62A00C810E4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		0068342823F1F1F300C810E4 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		0068342B23F1F40100C810E4 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthManager.swift; path = Health.booking/Controllers/AuthManager.swift; sourceTree = SOURCE_ROOT; };
@@ -46,6 +70,11 @@
 		007EF61A23F5D23200B74F9A /* PatientProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientProfile.swift; sourceTree = "<group>"; };
 		007EF61E23F5FC3E00B74F9A /* AppointmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentController.swift; sourceTree = "<group>"; };
 		007EF62023F621E500B74F9A /* DoctorProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorProfile.swift; sourceTree = "<group>"; };
+		00A4973723F9DF8B0079D2FF /* BookingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingController.swift; sourceTree = "<group>"; };
+		00A4973923F9EF190079D2FF /* BookingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingManager.swift; sourceTree = "<group>"; };
+		00A4D6EA23FA318000709C51 /* SchedulerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulerController.swift; sourceTree = "<group>"; };
+		00A4D6EC23FA319B00709C51 /* SchedulePreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchedulePreviewController.swift; sourceTree = "<group>"; };
+		00D1522B23F9F6B50054DA84 /* UIPickerDoctorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPickerDoctorProtocol.swift; sourceTree = "<group>"; };
 		00D5F1BE23F1A53400D2746D /* Health.booking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Health.booking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D5F1C123F1A53400D2746D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00D5F1C523F1A53400D2746D /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
@@ -66,6 +95,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34CA00C0B7B6A8345F34AF5D /* Pods_Health_booking.framework in Frameworks */,
+				002BB3C323F8201900372553 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				0068342623F1C62A00C810E4 /* Extension.swift */,
+				002BB3CC23F8ACA900372553 /* UIPickerHealthProtocol.swift */,
+				00D1522B23F9F6B50054DA84 /* UIPickerDoctorProtocol.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -83,20 +115,17 @@
 		0068342A23F1F3C600C810E4 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				002BB3BD23F7319B00372553 /* GeneralManager.swift */,
 				0068342B23F1F40100C810E4 /* AuthManager.swift */,
-				0068343123F3422300C810E4 /* ProfileManager.swift */,
 				007EF61623F588EC00B74F9A /* AWSClient.swift */,
-				007EF61A23F5D23200B74F9A /* PatientProfile.swift */,
 				007EF62023F621E500B74F9A /* DoctorProfile.swift */,
+				002BB3C423F824E200372553 /* HealthConnect.swift */,
+				007EF61A23F5D23200B74F9A /* PatientProfile.swift */,
+				0068343123F3422300C810E4 /* ProfileManager.swift */,
+				002BB3CA23F8A95100372553 /* HealthProfile.swift */,
+				00A4973923F9EF190079D2FF /* BookingManager.swift */,
 			);
 			path = Managers;
-			sourceTree = "<group>";
-		};
-		007EF61C23F5FBDA00B74F9A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		00D5F1B523F1A53400D2746D = {
@@ -123,9 +152,9 @@
 				00D5F1DA23F1BEF800D2746D /* Controllers */,
 				0068342A23F1F3C600C810E4 /* Managers */,
 				00D5F1DB23F1BF0500D2746D /* Model */,
-				007EF61C23F5FBDA00B74F9A /* Views */,
 				00D5F1D523F1BDFE00D2746D /* Storyboard */,
 				0068342523F1C61D00C810E4 /* Support */,
+				002BB3C123F8201900372553 /* Health.booking.entitlements */,
 				00D5F1C123F1A53400D2746D /* AppDelegate.swift */,
 				007EF61223F5800A00B74F9A /* API.swift */,
 				00D5F1CA23F1A53600D2746D /* Assets.xcassets */,
@@ -149,10 +178,16 @@
 		00D5F1DA23F1BEF800D2746D /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				00D5F1C523F1A53400D2746D /* OnboardingController.swift */,
-				0068342823F1F1F300C810E4 /* AuthController.swift */,
-				007EF61823F5A90200B74F9A /* LoginController.swift */,
+				00A4973723F9DF8B0079D2FF /* BookingController.swift */,
 				007EF61E23F5FC3E00B74F9A /* AppointmentController.swift */,
+				002BB3BF23F73A6200372553 /* AppointmentDetailController.swift */,
+				0068342823F1F1F300C810E4 /* AuthController.swift */,
+				002BB3C823F858E500372553 /* HealthAppController.swift */,
+				002BB3C623F831E200372553 /* HealthDataController.swift */,
+				007EF61823F5A90200B74F9A /* LoginController.swift */,
+				00D5F1C523F1A53400D2746D /* OnboardingController.swift */,
+				00A4D6EA23FA318000709C51 /* SchedulerController.swift */,
+				00A4D6EC23FA319B00709C51 /* SchedulePreviewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -160,9 +195,10 @@
 		00D5F1DB23F1BF0500D2746D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0068342D23F1F83600C810E4 /* User.swift */,
-				0068343323F342E700C810E4 /* Patient.swift */,
+				002BB3BB23F730EE00372553 /* Appointment.swift */,
 				0068343523F342F000C810E4 /* Doctor.swift */,
+				0068343323F342E700C810E4 /* Patient.swift */,
+				0068342D23F1F83600C810E4 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,6 +215,7 @@
 		9CBE990D240F7157AC7175A6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				002BB3C223F8201900372553 /* HealthKit.framework */,
 				62C726AA8586CA66F984AE37 /* Pods_Health_booking.framework */,
 			);
 			name = Frameworks;
@@ -303,19 +340,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				00D5F1C623F1A53400D2746D /* OnboardingController.swift in Sources */,
+				002BB3C723F831E200372553 /* HealthDataController.swift in Sources */,
 				007EF61923F5A90200B74F9A /* LoginController.swift in Sources */,
+				002BB3CB23F8A95100372553 /* HealthProfile.swift in Sources */,
 				0068342C23F1F40100C810E4 /* AuthManager.swift in Sources */,
+				00A4973823F9DF8B0079D2FF /* BookingController.swift in Sources */,
 				00D5F1C223F1A53400D2746D /* AppDelegate.swift in Sources */,
+				002BB3C023F73A6200372553 /* AppointmentDetailController.swift in Sources */,
+				00A4973A23F9EF190079D2FF /* BookingManager.swift in Sources */,
+				002BB3CD23F8ACA900372553 /* UIPickerHealthProtocol.swift in Sources */,
+				002BB3C923F858E500372553 /* HealthAppController.swift in Sources */,
 				007EF61B23F5D23200B74F9A /* PatientProfile.swift in Sources */,
 				0068343223F3422300C810E4 /* ProfileManager.swift in Sources */,
 				007EF61723F588EC00B74F9A /* AWSClient.swift in Sources */,
+				00A4D6EB23FA318000709C51 /* SchedulerController.swift in Sources */,
+				00D1522C23F9F6B50054DA84 /* UIPickerDoctorProtocol.swift in Sources */,
+				002BB3BE23F7319B00372553 /* GeneralManager.swift in Sources */,
 				007EF61323F5800A00B74F9A /* API.swift in Sources */,
 				0068342923F1F1F300C810E4 /* AuthController.swift in Sources */,
 				007EF61F23F5FC3E00B74F9A /* AppointmentController.swift in Sources */,
 				0068343623F342F000C810E4 /* Doctor.swift in Sources */,
+				002BB3BC23F730EE00372553 /* Appointment.swift in Sources */,
 				0068343423F342E700C810E4 /* Patient.swift in Sources */,
+				00A4D6ED23FA319B00709C51 /* SchedulePreviewController.swift in Sources */,
 				0068342723F1C62A00C810E4 /* Extension.swift in Sources */,
 				0068342E23F1F83600C810E4 /* User.swift in Sources */,
+				002BB3C523F824E200372553 /* HealthConnect.swift in Sources */,
 				007EF62123F621E500B74F9A /* DoctorProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,6 +511,7 @@
 			baseConfigurationReference = BA15BCA7EE9E97F669213E88 /* Pods-Health.booking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Health.booking/Health.booking.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UZ36E9K8AU;
 				INFOPLIST_FILE = Health.booking/Info.plist;
@@ -481,6 +532,7 @@
 			baseConfigurationReference = 5D6B963E096B99D387649B36 /* Pods-Health.booking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Health.booking/Health.booking.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UZ36E9K8AU;
 				INFOPLIST_FILE = Health.booking/Info.plist;

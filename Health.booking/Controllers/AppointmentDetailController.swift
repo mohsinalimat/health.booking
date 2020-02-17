@@ -21,6 +21,8 @@ class AppointmentDetailController: UIViewController {
     
     @IBOutlet weak var noteTextView: UITextView!
     
+    @IBOutlet weak var abortButton: UIButton!
+    
     // - Data
     var appointment: Appointment!
     
@@ -35,6 +37,24 @@ class AppointmentDetailController: UIViewController {
         hospitalLocationLabel.text = appointment.hospitalLocation
         dateLabel.text = appointment.date
         timeLabel.text = appointment.time
+        abortButton.isEnabled = appointment.status == .upcoming
+    }
+    
+    @IBAction func onAbort(_ sender: UIButton) {
+        var input = UpdateAppointmentInput(id: appointment.id)
+        input.status = Appointment.Status.aborted.rawValue
+        let mutation = UpdateAppointmentMutation(input: input)
+        AWSClient.shared.mutate(mutation) { (error) in
+            DispatchQueue.main.async {
+                guard error == nil else {
+                    self.showAlert(title: "Failed",
+                                   message: "Couldn't abort; please try again")
+                    return
+                }
+                self.showAlert(title: "Success",
+                               message: "The appointment was canceled")
+            }
+        }
     }
 }
 

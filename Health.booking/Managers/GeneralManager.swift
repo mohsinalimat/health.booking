@@ -83,3 +83,16 @@ extension GeneralManager {
     }
 }
 
+// MARK: - Helpers
+extension GeneralManager {
+    func appointmetsByStatus() -> [[Appointment]] {
+        guard let data = appointments else { return [] }
+        var filteredData: [[Appointment]] = []
+        let allStatuses = Appointment.Status.allCases
+        allStatuses.forEach { (status) in
+            let filtered = data.filter({ $0.status == status })
+            filteredData.append(filtered)
+        }
+        return filteredData
+    }
+}

@@ -5,6 +5,7 @@ query GetAppointment($id: ID!) {
     doctorId
     doctorName
     doctorSpecialty
+    healthId
     hospitalLocation
     hospitalName
     id
@@ -68,6 +69,7 @@ query ListAppointments(
       doctorId
       doctorName
       doctorSpecialty
+      healthId
       hospitalLocation
       hospitalName
       id

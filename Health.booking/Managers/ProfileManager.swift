@@ -44,7 +44,7 @@ extension ProfileManager.LoginStep: CustomStringConvertible {
         case .userValid:
             return "Login you in"
         case .profileValid(let name):
-            return "Welcome \(name)"
+            return "Welcome\n\(name)"
         case .healthDataValid:
             return "Data synced"
         case .completed:
