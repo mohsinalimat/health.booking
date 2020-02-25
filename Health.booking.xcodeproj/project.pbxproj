@@ -24,7 +24,6 @@
 		0068343423F342E700C810E4 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0068343323F342E700C810E4 /* Patient.swift */; };
 		0068343623F342F000C810E4 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0068343523F342F000C810E4 /* Doctor.swift */; };
 		007EF61323F5800A00B74F9A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007EF61223F5800A00B74F9A /* API.swift */; };
-		007EF61523F586A900B74F9A /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 007EF61423F586A900B74F9A /* awsconfiguration.json */; };
 		007EF61723F588EC00B74F9A /* AWSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007EF61623F588EC00B74F9A /* AWSClient.swift */; };
 		007EF61923F5A90200B74F9A /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007EF61823F5A90200B74F9A /* LoginController.swift */; };
 		007EF61B23F5D23200B74F9A /* PatientProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007EF61A23F5D23200B74F9A /* PatientProfile.swift */; };
@@ -42,6 +41,7 @@
 		00D5F1CE23F1A53600D2746D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D5F1CC23F1A53600D2746D /* LaunchScreen.storyboard */; };
 		00D5F1D723F1BE1B00D2746D /* Patient.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D5F1D623F1BE1B00D2746D /* Patient.storyboard */; };
 		00D5F1D923F1BE2700D2746D /* Doctor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D5F1D823F1BE2700D2746D /* Doctor.storyboard */; };
+		00F479FA240541470013AEB5 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 00F479F9240541470013AEB5 /* awsconfiguration.json */; };
 		34CA00C0B7B6A8345F34AF5D /* Pods_Health_booking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62C726AA8586CA66F984AE37 /* Pods_Health_booking.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +64,6 @@
 		0068343323F342E700C810E4 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		0068343523F342F000C810E4 /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		007EF61223F5800A00B74F9A /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		007EF61423F586A900B74F9A /* awsconfiguration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = awsconfiguration.json; path = ../awsconfiguration.json; sourceTree = "<group>"; };
 		007EF61623F588EC00B74F9A /* AWSClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AWSClient.swift; sourceTree = "<group>"; };
 		007EF61823F5A90200B74F9A /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		007EF61A23F5D23200B74F9A /* PatientProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientProfile.swift; sourceTree = "<group>"; };
@@ -84,6 +83,7 @@
 		00D5F1CF23F1A53600D2746D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00D5F1D623F1BE1B00D2746D /* Patient.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Patient.storyboard; sourceTree = "<group>"; };
 		00D5F1D823F1BE2700D2746D /* Doctor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Doctor.storyboard; sourceTree = "<group>"; };
+		00F479F9240541470013AEB5 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		5D6B963E096B99D387649B36 /* Pods-Health.booking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Health.booking.release.xcconfig"; path = "Target Support Files/Pods-Health.booking/Pods-Health.booking.release.xcconfig"; sourceTree = "<group>"; };
 		62C726AA8586CA66F984AE37 /* Pods_Health_booking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Health_booking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA15BCA7EE9E97F669213E88 /* Pods-Health.booking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Health.booking.debug.xcconfig"; path = "Target Support Files/Pods-Health.booking/Pods-Health.booking.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 				00D5F1CA23F1A53600D2746D /* Assets.xcassets */,
 				00D5F1CF23F1A53600D2746D /* Info.plist */,
 				00D5F1CC23F1A53600D2746D /* LaunchScreen.storyboard */,
-				007EF61423F586A900B74F9A /* awsconfiguration.json */,
+				00F479F9240541470013AEB5 /* awsconfiguration.json */,
 			);
 			path = Health.booking;
 			sourceTree = "<group>";
@@ -281,9 +281,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				007EF61523F586A900B74F9A /* awsconfiguration.json in Resources */,
 				00D5F1CE23F1A53600D2746D /* LaunchScreen.storyboard in Resources */,
 				00D5F1CB23F1A53600D2746D /* Assets.xcassets in Resources */,
+				00F479FA240541470013AEB5 /* awsconfiguration.json in Resources */,
 				00D5F1D723F1BE1B00D2746D /* Patient.storyboard in Resources */,
 				00D5F1D923F1BE2700D2746D /* Doctor.storyboard in Resources */,
 				00D5F1C923F1A53400D2746D /* Main.storyboard in Resources */,
